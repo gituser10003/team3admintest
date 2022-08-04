@@ -95,4 +95,17 @@ public class SawonService {
 		}
 		return n;
 	}// end sawondel
+	
+	public int sawonUpdate(SawonDTO dto) {
+		SqlSession session = MySqlSessionFactory.getSession();
+		int n = 0;
+		try {
+			SawonDAO dao = new SawonDAO();
+			n = dao.sawonUpdate(session, dto);
+			session.commit();
+		} finally {
+			session.close();
+		}
+		return n;
+	}
 }//end class

@@ -43,4 +43,21 @@ where username=#{username}
     where userid = #{userid}
    </delete>
 
+<update id="sawonUpdate" parameterType="SawonDTO">
+update sawon
+set userid = #{userid},
+passwd = #{passwd},
+username = #{username},
+phonenumber1 = #{phonenumber1},
+phonenumber2 = #{phonenumber2},
+phonenumber3 = #{phonenumber3},
+birthday1 = #{birthday1},
+birthday2 = #{birthday2},
+birthday3 = #{birthday3},
+email1 = #{email1},
+email2 = #{email2},
+sawongrade = #{sawongrade}
+where userid = #{userid}
+</update>
+
 </mapper>

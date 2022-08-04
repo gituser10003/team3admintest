@@ -85,9 +85,9 @@ String email1 = dto.getEmail1();
 String email2 = dto.getEmail2();
 String sawongrade = dto.getSawongrade();
 %>
-<form action="SawonAddServlet" method="get">
+
 <div class="intro">
- 
+ <form action="SawonUpdateServlet" method="get">
    <ul class="logo">
     <li><a href="Mainpage1.jsp">DMN COFFEE</a></li>
    </ul>
@@ -331,7 +331,7 @@ String sawongrade = dto.getSawongrade();
    <input class="check" type="submit" value="확인">
    </div>
    </div>
-   
+   </form>
      <div>
      <input type="button" class="del"  value="삭제" id="xx<%=userid %>" data-id="<%=userid%>" />
      </div> 
@@ -339,4 +339,4 @@ String sawongrade = dto.getSawongrade();
 
 </div>
 
-</form>
+

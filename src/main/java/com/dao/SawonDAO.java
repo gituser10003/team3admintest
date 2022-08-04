@@ -39,6 +39,9 @@ public class SawonDAO {
 		return n;
 	}
 
-
+	public int sawonUpdate(SqlSession session, SawonDTO dto) {
+		int n = session.update("SawonMapper.sawonUpdate", dto);
+		return n;
+	}
 
 }
