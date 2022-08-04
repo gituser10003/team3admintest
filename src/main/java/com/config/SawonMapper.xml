@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="SawonMapper">
+
+<insert id="sawonAdd" parameterType="SawonDTO">
+insert into sawon (userid,passwd,username,phonenumber1,phonenumber2,phonenumber3,
+                   birthday1,birthday2,birthday3,email1,email2, sawongrade)
+            values( #{userid},#{passwd},#{username},#{phonenumber1},#{phonenumber2},#{phonenumber3},
+                   #{birthday1},#{birthday2},#{birthday3},#{email1},#{email2},#{sawongrade})
+</insert>
+
+<select id="idCheck" parameterType="string" resultType="int">
+select count(*)
+from sawon
+where userid = #{userid}
+</select>
+
+<select id="login" parameterType="hashmap" resultType="SawonDTO">
+select userid,passwd,username,phonenumber1,phonenumber2,phonenumber3,
+birthday1,birthday2,birthday3,email1,email2, sawongrade
+from sawon
+where userid = #{userid} and passwd = #{passwd}
+</select>
+
+<select id="selectAll" resultType="SawonDTO" parameterType="string">
+select userid, passwd,username,phonenumber1,phonenumber2,phonenumber3,birthday1,birthday2,birthday3,
+email1,email2,sawongrade
+from sawon
+</select>
+
+<select id="SawonRetrieve" parameterType="string" resultType="SawonDTO">
+select userid, passwd,username,phonenumber1,phonenumber2,phonenumber3,birthday1,birthday2,birthday3,
+email1,email2,sawongrade
+from sawon
+where username=#{username}
+</select>
+
+
+</mapper>
