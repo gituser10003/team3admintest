@@ -82,4 +82,17 @@ public class SawonService {
         }
         return dto;
 	}
+	
+	public int SawonDel(String userid) {
+		SqlSession session = MySqlSessionFactory.getSession();
+		int n = 0;
+		try {
+			SawonDAO dao = new SawonDAO();
+			n = dao.SawonDel(session, userid);
+			session.commit();
+		} finally {
+			session.close();
+		}
+		return n;
+	}// end sawondel
 }//end class

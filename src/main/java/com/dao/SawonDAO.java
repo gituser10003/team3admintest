@@ -33,6 +33,11 @@ public class SawonDAO {
 		SawonDTO n = session.selectOne("SawonMapper.SawonRetrieve", username);
         return n;
 	}
+	
+	public int SawonDel(SqlSession session, String userid) {
+		int n = session.delete("SawonMapper.SawonDel", userid);
+		return n;
+	}
 
 
 

@@ -59,6 +59,13 @@ $("#userid").on("keyup",function(event){
 				console.log("error");
 			}
 		});
+	 
+});
+
+//삭제버튼
+$(".del").on("click",function(){
+	var userid= $(this).attr("data-id");
+	location.href="SawonDelServlet?userid="+userid;
 });
 
 })//end document
@@ -326,7 +333,7 @@ String sawongrade = dto.getSawongrade();
    </div>
    
      <div>
-     <input class="del" type="button" value="삭제" >
+     <input type="button" class="del"  value="삭제" id="xx<%=userid %>" data-id="<%=userid%>" />
      </div> 
 
 

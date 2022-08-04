@@ -20,6 +20,15 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	</environments>
 	<mappers>
 		<mapper resource="com/config/SawonMapper.xml" />
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	</mappers>
 </configuration>
 
