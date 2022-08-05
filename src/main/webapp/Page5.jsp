@@ -102,10 +102,10 @@ String sawongrade = dto.getSawongrade();
    <span id="result"></span>
    </div>
    <div class="account">
-   비밀번호<input type="text" class="input_text" id="passwd" name="passwd" value="<%=passwd%>">
+   비밀번호<input type="password" class="input_text" id="passwd" name="passwd" value="<%=passwd%>">
    </div>
     <div class="account">
-   비밀번호 재확인<input type="text" class="input_text" id="passwd2" name="passwd2">
+   비밀번호 재확인<input type="password" class="input_text" id="passwd2" name="passwd2">
    <span id="result2"></span>
    </div>
    <div class="account">
