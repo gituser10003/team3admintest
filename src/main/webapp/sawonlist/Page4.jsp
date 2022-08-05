@@ -1,3 +1,4 @@
+<%@page import="com.dto.SawonPageDTO"%>
 <%@page import="com.dto.SawonDTO"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -12,20 +13,19 @@
 
    $(document).ready(function() {
        
-   	   $("#all").on("click", function() {
-   		     var result = this.checked;
-   		     $(".chk").each(function(idx,data){
-   		    	// this.checked = result;
-   		    	 data.checked=result;
-   		    	 console.log(idx,"\t", data);
-   		     });
-   	   });
    	   
    	});
 </script>
 <link href="css/Page4.css?ver=1.1" rel="stylesheet" type="text/css">
 </head>
 <body>
+	<%
+	SawonPageDTO pDTO = (SawonPageDTO) request.getAttribute("pDTO");
+	List<SawonDTO> list = pDTO.getList();
+	String order = (String)request.getAttribute("order");
+	String searchName = (String)request.getAttribute("searchName");
+	String searchValue = (String)request.getAttribute("searchValue");
+	%>
 	<div class="intro">
 		<div class="header">
 
@@ -40,28 +40,13 @@
 
 				<div class="modify_title">
 					사원 리스트
-					<div class="title_menus">
-
-						<div class="modify">
-							<a href="Page5.jsp">수정</a>
-						</div>
-						<div class="delete">
-							<a href="main.jsp">삭제</a>
-						</div>
-						<div class="title_check">
-							<a href="main.jsp">완료</a>
-						</div>
-
-					</div>
+					
 				</div>
-<%
-	List<SawonDTO> list = (List<SawonDTO>) request.getAttribute("list");
-	%>
+
 <table class="admin_board_wrap">
 					<tbody class="admin_boardList">
 						<!-- <th class="admin_board_head" >아이디</th> -->
 						<!-- <th class="admin_board_head">비밀번호</th> -->
-						<th class="admin_board_head" ><input type="checkbox" id="all" name="all"/>체크</th>
 						<th class="admin_board_head" >사원이름</th>
 						<th class="admin_board_head" >핸드폰번호</th>
 						<th class="admin_board_head" >생년월일</th>
@@ -88,9 +73,6 @@
 	
 		<tr class="admin_board_user_vowel" >
 			
-			<%-- <td class="admin_board_user" id="userid" name="userid"><a href=""><%=userid%></a></td> --%>
-	<%-- 		<td class="admin_board_user" id="passwd" name="passwd"><%=passwd%></td> --%>
-			<td class="admin_board_user" id="username" name="username" ><input type="checkbox" id="chk" name="chk" class="chk"/></td>
 			<td class="admin_board_user" id="username" name="username"><a href="SawonRetrieveServlet?username=<%=username%>"><%=username%></a></td>
 			<td class="admin_board_user" id="phonenumber1" name="phonenumber1"><%=phonenumber1+"-"+phonenumber2+"-"+phonenumber3%></td>
 			<td class="admin_board_user" id="birthday1" name="birthday1"><%=birthday1+"/"+birthday2+"/"+birthday3%></td>
@@ -104,13 +86,27 @@
 				</table>
 		
 				<s_paging> 
-            <div id="paging">
+            <div id="paging" class="paging">
               <br>
-                <a href="#" class="prev" title="이전페이지">◀ PREV </a>
+                 <%
+		        int curPage = pDTO.getCurPage();
+		        int perPage = pDTO.getPerPage();
+				int totalCount = pDTO.getTotalCount();
+				int totalPage = totalCount/perPage;
+				if(totalCount%perPage!=0) totalPage++;
+		        for(int i=1; i<= totalPage; i++){
+		          	if(i== curPage){
+		          		out.print(i+"&nbsp;");
+		          	}else{
+		          		out.print("<a href='SawonList?curPage="+i+"&searchName="+searchName+"&searchValue="+searchValue+"'>"+i+"</a>&nbsp;");
+		          	}
+		        }//end for
+		   %>
+          <!--       <a href="#" class="prev" title="이전페이지">◀ PREV </a>
                 <s_paging_rep><a href="#" class="num">1</a></s_paging_rep>
                 <s_paging_rep><a href="#" class="num">2</a></s_paging_rep>
                 <s_paging_rep><a href="#" class="num">3</a></s_paging_rep>
-                <a href="#" class="prev" title="다음페이지">NEXT ▶</a>
+                <a href="#" class="prev" title="다음페이지">NEXT ▶</a> -->
               <br/>&nbsp;
             </div>
         </s_paging>

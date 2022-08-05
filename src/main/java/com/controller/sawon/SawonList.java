@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.dto.SawonDTO;
+import com.dto.SawonPageDTO;
 import com.service.SawonService;
 
 
@@ -25,11 +26,22 @@ public class SawonList extends HttpServlet {
 	
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		SawonService service=new SawonService();
-		List<SawonDTO> list=service.select();
-		request.setAttribute("list", list);
+		String curPage = request.getParameter("curPage");//현재페이지 
+		if(curPage == null) curPage = "1";//시작시 현재페이지 1 
+		
+		String searchName = request.getParameter("searchName");
+		String searchValue = request.getParameter("searchValue");
+		System.out.println(searchName+"\t"+searchValue);
+		SawonService service = new SawonService();
+		SawonPageDTO pDTO = service.select(searchName, searchValue, Integer.parseInt(curPage));
+		
+		request.setAttribute("pDTO", pDTO);
+		request.setAttribute("searchName", searchName);
+		request.setAttribute("searchValue", searchValue);
+		//forward
 		RequestDispatcher dis = request.getRequestDispatcher("sawonlist/Page4.jsp");
 		dis.forward(request, response);
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
