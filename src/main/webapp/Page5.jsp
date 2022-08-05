@@ -328,12 +328,12 @@ String sawongrade = dto.getSawongrade();
    <input class="cancell" type="reset" value="취소">
    </div>
    <div>
-   <input class="check" type="submit" value="확인">
+   <input onclick="return confirm('정말로 수정하시겠습니까?')" class="check" type="submit" value="확인">
    </div>
    </div>
    </form>
      <div>
-     <input type="button" class="del"  value="삭제" id="xx<%=userid %>" data-id="<%=userid%>" />
+     <input onclick="return confirm('정말로 삭제하시겠습니까?')" type="button" class="del"  value="삭제" id="xx<%=userid %>" data-id="<%=userid%>" />
      </div> 
 
 
