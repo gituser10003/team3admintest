@@ -332,6 +332,7 @@ String sawongrade = dto.getSawongrade();
    </div>
    </div>
    </form>
+   
      <div>
      <input onclick="return confirm('정말로 삭제하시겠습니까?')" type="button" class="del"  value="삭제" id="xx<%=userid %>" data-id="<%=userid%>" />
      </div> 
