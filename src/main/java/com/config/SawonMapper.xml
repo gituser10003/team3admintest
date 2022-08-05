@@ -60,4 +60,33 @@ sawongrade = #{sawongrade}
 where userid = #{userid}
 </update>
 
+  <select id="totalCount" resultType="int" parameterType="hashmap">
+      select count(*)
+      from sawon
+       <where>
+	  <if test="searchName == 'username'">
+	       upper(username)  like upper ('%'||#{searchValue}||'%') 
+	  </if>
+	  <if test="searchName == 'sawongrade'">
+	      upper(sawongrade) like upper('%'||#{searchValue}||'%') 
+	  </if>
+     </where>
+    </select>
+
+	<select id="selectPage" resultType="SawonDTO" parameterType="hashmap">
+	select userid, passwd,username,phonenumber1,phonenumber2,phonenumber3,birthday1,birthday2,birthday3,
+email1,email2,sawongrade
+from sawon
+	
+     <where>
+	 <if test="searchName == 'username'">
+	       upper(username)  like upper ('%'||#{searchValue}||'%') 
+	  </if>
+	  <if test="searchName == 'sawongrade'">
+	      upper(sawongrade) like upper('%'||#{searchValue}||'%') 
+	  </if>
+     </where>
+	
+	order by username desc
+	</select>
 </mapper>

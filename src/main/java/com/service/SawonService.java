@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import com.config.MySqlSessionFactory;
 import com.dao.SawonDAO;
 import com.dto.SawonDTO;
+import com.dto.SawonPageDTO;
 
 public class SawonService {
 
@@ -108,4 +109,25 @@ public class SawonService {
 		}
 		return n;
 	}
+
+
+
+	public SawonPageDTO select(String searchName, String searchValue, int curPage) {
+		HashMap<String, String> map = new HashMap<>();
+		map.put("searchName", searchName);
+		map.put("searchValue", searchValue);
+		
+		 SawonDAO dao = new   SawonDAO();
+		 SqlSession session = MySqlSessionFactory.getSession();
+		 SawonPageDTO pDTO = null;
+		 try {
+			 pDTO = dao.select(session,map, curPage);
+	    	  
+//	      }catch(Exception e) {
+//	    	  e.printStackTrace();
+	      }finally {
+			session.close();
+	      }
+	      return pDTO;
+		}//end select
 }//end class

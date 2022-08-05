@@ -3,9 +3,11 @@ package com.dao;
 import java.util.HashMap;
 import java.util.List;
 
+import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 
 import com.dto.SawonDTO;
+import com.dto.SawonPageDTO;
 
 public class SawonDAO {
 	
@@ -42,6 +44,25 @@ public class SawonDAO {
 	public int sawonUpdate(SqlSession session, SawonDTO dto) {
 		int n = session.update("SawonMapper.sawonUpdate", dto);
 		return n;
+	}
+
+	public SawonPageDTO select(SqlSession session, HashMap<String, String> map, int curPage) {
+		SawonPageDTO pDTO = new SawonPageDTO();
+		int perPage = pDTO.getPerPage();   //한페이지 2개씩 
+		int offset = (curPage - 1) * perPage;
+		
+		List<SawonDTO> list =  session.selectList("SawonMapper.selectPage" , map , new RowBounds(offset, perPage));
+		//레코드 시작 번호, 읽어올 갯수 
+		
+		pDTO.setCurPage(curPage);//현재 페이지번호
+		pDTO.setList(list);//페이지 에 해당 데이터
+		pDTO.setTotalCount(totalCount(session,map));//전체 레코드 갯수 저장 
+		
+		return pDTO;
+	
+	}
+	public int totalCount(SqlSession session,HashMap<String, String> map) {
+		return session.selectOne("SawonMapper.totalCount",map);
 	}
 
 }
