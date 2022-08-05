@@ -42,7 +42,7 @@ $(document).ready(function () {
    </div>
    <div class="id">
    &nbsp;&nbsp;&nbsp;비밀번호<br><br>
-   <input type="text" class="input_text" name="passwd" id="passwd">
+   <input type="password" class="input_text" name="passwd" id="passwd">
    </div>
    <div>
    <a href="LoginUIServlet"><input class="login" type="submit" value="관리자 로그인"></a>
