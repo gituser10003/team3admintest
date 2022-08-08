@@ -9,7 +9,6 @@
     String sawongrade = dto.getSawongrade();
     %>
     
-    
     <%if("Admin".equals(sawongrade)){  %>
 <a href="SawonList" class="SawonM" style="color : white">사원관리</a>
 <a href="SawonList" class="MemberM" style="color : white">회원관리</a>
