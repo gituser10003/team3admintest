@@ -7,7 +7,7 @@
     <%
     SawonDTO dto = (SawonDTO)session.getAttribute("login");
     String sawongrade = dto.getSawongrade();
-    System.out.println("jsp"+dto.getSawongrade());%>
+    %>
     
     
     <%if("Admin".equals(sawongrade)){  %>
