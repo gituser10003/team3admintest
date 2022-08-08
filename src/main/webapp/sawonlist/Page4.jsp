@@ -83,6 +83,18 @@
 			}
 		%>
 			</tbody>
+			
+			<tr>
+			<td colspan="5">
+				<form action="SawonList">
+					<select name="searchName">
+						<option value="sawongrade">직급</option>
+						<option value="username">이름</option>
+					</select> <input type="text" name="searchValue"> <input
+						type="submit" value="검색">
+				</form>
+			</td>
+		</tr>
 				</table>
 		
 				<s_paging> 
