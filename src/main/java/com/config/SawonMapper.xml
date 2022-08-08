@@ -34,7 +34,7 @@ from sawon
 select userid, passwd,username,phonenumber1,phonenumber2,phonenumber3,birthday1,birthday2,birthday3,
 email1,email2,sawongrade
 from sawon
-where username=#{username}
+where userid=#{userid}
 </select>
 
  <delete id="SawonDel" parameterType="String">

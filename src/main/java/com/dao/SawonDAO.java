@@ -31,8 +31,8 @@ public class SawonDAO {
 		return list;
 	}
 
-	public SawonDTO SawonRetrieve(SqlSession session, String username) {
-		SawonDTO n = session.selectOne("SawonMapper.SawonRetrieve", username);
+	public SawonDTO SawonRetrieve(SqlSession session, String userid) {
+		SawonDTO n = session.selectOne("SawonMapper.SawonRetrieve", userid);
         return n;
 	}
 	

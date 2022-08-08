@@ -73,7 +73,7 @@
 	
 		<tr class="admin_board_user_vowel" >
 			
-			<td class="admin_board_user" id="username" name="username"><a href="SawonRetrieveServlet?username=<%=username%>"><%=username%></a></td>
+			<td class="admin_board_user" id="username" name="username"><a href="SawonRetrieveServlet?userid=<%=userid%>"><%=username%></a></td>
 			<td class="admin_board_user" id="phonenumber1" name="phonenumber1"><%=phonenumber1+"-"+phonenumber2+"-"+phonenumber3%></td>
 			<td class="admin_board_user" id="birthday1" name="birthday1"><%=birthday1+"/"+birthday2+"/"+birthday3%></td>
 			<td class="admin_board_user" id="email1" name="email1"><%=email1+"@"+email2%></td>

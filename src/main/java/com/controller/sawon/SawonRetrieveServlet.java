@@ -20,13 +20,13 @@ public class SawonRetrieveServlet extends HttpServlet {
 	
         request.setCharacterEncoding("UTF-8");
 		
-		String username = request.getParameter("username");
+		String userid = request.getParameter("userid");
 
 		SawonDTO dto = null;
 
 		SawonService service = new SawonService();
 
-			    dto = service.SawonRetrieve(username);
+			    dto = service.SawonRetrieve(userid);
 			    request.setAttribute("dto", dto);
 
 

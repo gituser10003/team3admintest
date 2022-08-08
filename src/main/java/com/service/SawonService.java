@@ -71,12 +71,12 @@ public class SawonService {
 	      return list;
 		}
 
-	public SawonDTO SawonRetrieve(String username) {
+	public SawonDTO SawonRetrieve(String userid) {
 		SqlSession session = MySqlSessionFactory.getSession();
         SawonDTO dto = null;
         try {
             SawonDAO dao = new SawonDAO();
-            dto = dao.SawonRetrieve(session, username);
+            dto = dao.SawonRetrieve(session, userid);
             session.commit();
         } finally {
             session.close();
