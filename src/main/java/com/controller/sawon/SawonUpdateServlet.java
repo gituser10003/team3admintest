@@ -45,9 +45,10 @@ public class SawonUpdateServlet extends HttpServlet {
 			if (num==1) {
 				dto2= service.SawonRetrieve(userid);
 				session.setAttribute("login", dto2); //세션에 최신정보저장
-				session.setAttribute("sawonAdd", "회원정보가 수정되었습니다.");//세션에 최신정보저장
+				//session.setAttribute("sawonAdd", "회원정보가 수정되었습니다.");//세션에 최신정보저장
 			}
 			nextPage = "SawonList";
+			
 		}else {
 			nextPage = "LoginUIServlet";
 			request.setAttribute("mesg", "로그인이 필요한 작업입니다.");
