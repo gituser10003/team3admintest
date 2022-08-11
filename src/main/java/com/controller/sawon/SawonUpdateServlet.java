@@ -47,7 +47,7 @@ public class SawonUpdateServlet extends HttpServlet {
 				session.setAttribute("login", dto2); //세션에 최신정보저장
 				//session.setAttribute("sawonAdd", "회원정보가 수정되었습니다.");//세션에 최신정보저장
 			}
-			nextPage = "SawonList";
+			nextPage = "SawonListServlet";
 			
 		}else {
 			nextPage = "LoginUIServlet";

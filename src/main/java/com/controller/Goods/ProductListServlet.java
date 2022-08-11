@@ -1,8 +1,6 @@
-package com.controller.sawon;
+package com.controller.Goods;
 
 import java.io.IOException;
-
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,20 +9,29 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.dto.SawonDTO;
+import com.dto.ProductPageDTO;
 import com.dto.SawonPageDTO;
+import com.service.ProductService;
 import com.service.SawonService;
 
-
-@WebServlet("/SawonList")
-public class SawonList extends HttpServlet {
+/**
+ * Servlet implementation class ProductList
+ */
+@WebServlet("/ProductListServlet")
+public class ProductListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	   public SawonList() {
-	        super();
-	        // TODO Auto-generated constructor stub
-	    }
-	
-	
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ProductListServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String curPage = request.getParameter("curPage");//현재페이지 
 		if(curPage == null) curPage = "1";//시작시 현재페이지 1 
@@ -32,18 +39,21 @@ public class SawonList extends HttpServlet {
 		String searchName = request.getParameter("searchName");
 		String searchValue = request.getParameter("searchValue");
 		System.out.println(searchName+"\t"+searchValue);
-		SawonService service = new SawonService();
-		SawonPageDTO pDTO = service.select(searchName, searchValue, Integer.parseInt(curPage));
+		ProductService service = new ProductService();
+		ProductPageDTO pDTO = service.select(searchName, searchValue, Integer.parseInt(curPage));
 		
 		request.setAttribute("pDTO", pDTO);
 		request.setAttribute("searchName", searchName);
 		request.setAttribute("searchValue", searchValue);
 		//forward
-		RequestDispatcher dis = request.getRequestDispatcher("sawonlist/Page4.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("Goods/ProductList.jsp");
 		dis.forward(request, response);
-		
 	}
+		
 
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
