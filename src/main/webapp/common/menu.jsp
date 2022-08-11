@@ -10,9 +10,9 @@
     %>
     
     <%if("Admin".equals(sawongrade)){  %>
-<a href="SawonList" class="SawonM" style="color : white">사원관리</a>
+<a href="SawonListServlet" class="SawonM" style="color : white">사원관리</a>
 <a href="MemberListServlet" class="MemberM" style="color : white">회원관리</a>
-<a href="SawonList" class="ProductM" style="color : white">상품관리</a>
+<a href="ProductListServlet" class="ProductM" style="color : white">상품관리</a>
 <%} %>
 
 
@@ -20,7 +20,7 @@
    if("Manager".equals(sawongrade)){
 %>
 <a href="MemberListServlet" class="MemberM" style="color : white">회원관리</a>
-<a href="SawonList" class="ProductM" style="color : white">상품관리</a>
+<a href="ProductListServlet" class="ProductM" style="color : white">상품관리</a>
 <% 
 } 
 %>

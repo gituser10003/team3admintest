@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ProductMapper">
+	  <select id="totalCount" resultType="int" parameterType="hashmap">
+      select count(*)
+      from product
+       <where>
+	  <if test="searchName == 'pdno'">
+	      upper(pdno) like upper('%'||#{searchValue}||'%')
+	  </if>
+	  <if test="searchName == 'pdnm'">
+	      upper(pdnm) like upper('%'||#{searchValue}||'%') 
+	  </if>
+     </where>
+    </select>
+    
+    <select id="selectPage" resultType="ProductDTO" parameterType="hashmap">
+	select pdno,pdnm,pdprice,ctno,pdfile
+from product
+	
+     <where>
+	 <if test="searchName == 'pdnm'">
+	      to_char(pdnm)  like upper ('%'||#{searchValue}||'%') 
+	  </if>
+	  <if test="searchName == 'ctno'">
+	      to_char(ctno) like upper('%'||#{searchValue}||'%') 
+	  </if>
+     </where>
+	
+	order by pdnm desc
+	</select>
+	
+	<select id="ProductRetrieve" parameterType="string" resultType="ProductDTO">
+select pdno,pdnm,pdprice,ctno,pdfile
+from product
+where pdno=#{pdno}
+</select>
+
+<update id="ProductUpdate"  parameterType="hashmap">
+update product
+set 
+pdno = #{pdno},
+pdnm = #{pdnm},
+pdprice = #{pdprice},
+ctno = #{ctno},
+pdfile = #{pdfile}
+where pdnm = #{pdnm}
+</update>
+
+<insert id="ProductAdd" parameterType="ProductDTO">
+insert into product (pdno,pdnm,pdprice,ctno,pdfile)
+            values(#{pdno},#{pdnm},#{pdprice},#{ctno},#{pdfile})
+</insert>
+
+</mapper>

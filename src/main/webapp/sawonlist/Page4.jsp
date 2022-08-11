@@ -87,7 +87,7 @@
 			
 			<tr>
 			<td colspan="5">
-				<form action="SawonList">
+				<form action="SawonListServlet">
 					<select name="searchName">
 						<option value="sawongrade">직급</option>
 						<option value="username">이름</option>
@@ -111,7 +111,7 @@
 		          	if(i== curPage){
 		          		out.print(i+"&nbsp;");
 		          	}else{
-		          		out.print("<a href='SawonList?curPage="+i+"&searchName="+searchName+"&searchValue="+searchValue+"'>"+i+"</a>&nbsp;");
+		          		out.print("<a href='SawonListServlet?curPage="+i+"&searchName="+searchName+"&searchValue="+searchValue+"'>"+i+"</a>&nbsp;");
 		          	}
 		        }//end for
 		   %>
