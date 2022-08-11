@@ -16,7 +16,7 @@
    	   
    	});
 </script>
-<link href="css/Page4.css?ver=1.1" rel="stylesheet" type="text/css">
+<link href="css/Page4.css?ver=1" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<%
@@ -30,6 +30,7 @@
 		<div class="header">
 
 			<div class="main1">
+			<div class="toptop">
 				<ul>
 					<li><a href="main.jsp"><img src="images/menu_home.png"
 							style="width: 50px; height: auto"></a></li>
@@ -37,7 +38,7 @@
 				<ul class="logo">
 					<li><a href="main.jsp">DMN COFFEE</a></li>
 				</ul>
-
+                </div>
 				<div class="modify_title">
 					사원 리스트
 					

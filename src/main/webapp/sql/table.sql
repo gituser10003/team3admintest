@@ -18,3 +18,12 @@ create table sawon
   email2 varchar2(20) not null,
   sawongrade varchar2(15) not null
 );
+-- DMN 회원테이블
+CREATE TABLE MEMBER (
+     MEMNO NUMBER(20) PRIMARY KEY
+    , MEMPHONE1 VARCHAR2(4) NOT NULL
+    , MEMPHONE2 VARCHAR2(4) NOT NULL
+    , MEMPHONE3 VARCHAR2(4) NOT NULL
+    , MEMPASSWD VARCHAR2(20) 
+    , MEMPOINT NUMBER(10)
+    );

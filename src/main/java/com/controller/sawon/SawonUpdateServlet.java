@@ -25,7 +25,7 @@ public class SawonUpdateServlet extends HttpServlet {
 		if (dto!=null) {
 			String userid = request.getParameter("userid");
 			String passwd = request.getParameter("passwd");
-			String username = request.getParameter("username");
+			String username = request.getParameter("username"); 
 			String phonenumber1 = request.getParameter("phonenumber1");
 			String phonenumber2 = request.getParameter("phonenumber2");
 			String phonenumber3 = request.getParameter("phonenumber3");

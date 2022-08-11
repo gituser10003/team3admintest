@@ -8,6 +8,9 @@ margin: 0px;
 padding: 0px;
 color : #000;
 }
+.toptop{
+	display: flex;
+}
 .intro {
 align-items: center;
 width: 1000px;
@@ -16,6 +19,7 @@ border: 3px solid black;
 margin: auto;
 border-radius: 2em;
 }
+
 .logo{
 display : flex;
 font-style: italic;
@@ -24,6 +28,7 @@ font-size: 30px;
 width: 950px;
 height : 170px;
 justify-content: flex-end;
+margin-right: 50px;
 }
 
 .jemog{
