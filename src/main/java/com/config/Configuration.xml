@@ -6,7 +6,12 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 
    <properties resource="com/config/jdbc.properties" />   
    <typeAliases>
-    <typeAlias type="com.dto.SawonDTO" alias="SawonDTO"/>   </typeAliases>   
+    <typeAlias type="com.dto.SawonDTO" alias="SawonDTO"/>  
+      
+    <typeAlias type="com.dto.ProductDTO" alias="ProductDTO"/>   </typeAliases>  
+    
+    
+     
 	<environments default="development">
 		<environment id="development">
 			<transactionManager type="JDBC" />
@@ -20,6 +25,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	</environments>
 	<mappers>
 		<mapper resource="com/config/SawonMapper.xml" />
+		<mapper resource="com/config/ProductMapper.xml" />
 		
 		
 		
