@@ -54,4 +54,10 @@ insert into product (pdno,pdnm,pdprice,ctno,pdfile)
             values(#{pdno},#{pdnm},#{pdprice},#{ctno},#{pdfile})
 </insert>
 
+<delete id="ProductDel" parameterType="String">
+delete 
+from product
+where pdno = #{pdno}
+</delete>
+
 </mapper>

@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 
 
+
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -72,4 +73,18 @@ public class ProductService {
 		}
 		return n;
 	}//end sawonAdd
+
+	public int ProductDel(String pdno) {
+		SqlSession session = MySqlSessionFactory.getSession();
+		int n = 0;
+		try {
+			ProductDAO dao = new ProductDAO();
+			n = dao.ProductDel(session, pdno);
+			session.commit();
+		} finally {
+			session.close();
+		}
+		return n;
+	}
+	
 }

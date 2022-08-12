@@ -27,11 +27,10 @@ $(document).ready(function () {
 }); */
 
 //삭제버튼
-$(".del").on("click",function(){
-	var userid= $(this).attr("data-id");
-	location.href="ProductDelServlet?userid="+userid;
-});
-
+	$(".del").on("click",function(){
+		var userid= $(this).attr("data-id");
+		location.href="ProductDelServlet?pdno="+pdno;
+	});
 })//end document
 </script>
 <%

@@ -42,5 +42,10 @@ public class ProductDAO {
 		int n = session.insert("ProductMapper.ProductAdd", dto);
 		return n;
 	}
+	public int ProductDel(SqlSession session, String pdno) {
+		int n = session.delete("ProductMapper.ProductDel",pdno);
+		return n;
+	}
+	
 
 }
