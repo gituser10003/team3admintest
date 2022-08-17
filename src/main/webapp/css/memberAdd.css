@@ -37,8 +37,7 @@ font-size: 60px;
 font-weight: bold;
 width: 1000px;
 height: 200px;
-margin-left: 270px;
-margin-bottom: 200px;
+margin-left: 315px;
 }
 
 
@@ -60,49 +59,45 @@ box-sizing: border-box;
 }
 
 
-#memno{
+#pdno{
 	margin-left: 137px;
 	height: 50px;
 } 
-#phone1
+#pdnm {
+	margin-left: 117px;
+	height: 50px;
+}
+
+#pdprice{
+	margin-left: 157px;
+	height: 50px;
+}
+#ctno
  {
 	margin-left: 110px;
 	width: 16%;
 	height: 50px;
 }
-#phone2
- {
-    margin-left:0px;
-	width: 20%;
-	height: 50px;
-}
-#phone3
- {
-    margin-left:0px;
-	width: 20%;
-	height: 50px;
-}
 
-#mempoint{
-	width: 30%;	
-	margin-left: 150px;
+
+#pdfile {
+	margin-left: 110px;
+	width: 15%;
 	height: 50px;
 }
-
 
 .button{
 display: flex;
 width: 1000px;
 height: 100px;
-margin-top: 300px;
 }
 .cancell{
 text-align : center;
 font-size: 40px;
 font-weight: bold;
-width: 260px;
-height: 80px;
-margin-left : 230px;
+width: 300px;
+height: 100px;
+margin-left : 180px;
 border: 3px solid black;
 line-height: center;
 background-color: black;
@@ -114,8 +109,8 @@ color: white;
 text-align : center;
 font-size: 40px;
 font-weight: bold;
-width: 260px;
-height: 80px;
+width: 300px;
+height: 100px;
 margin-left : 20px;
 border: 3px solid black;
 line-height: center;
@@ -124,16 +119,26 @@ border-radius: 1em;
 color: white;
 }
 
-.del{
-text-align : center;
-font-size: 20px;
-font-weight: bold;
-width: 140px;
-height: 40px;
-margin-left : 840px;
-border: 3px solid black;
-line-height: center;
-background-color: black;
-border-radius: 1em;
-color: white;
+#memno {
+	margin-left: 117px;
+	height: 50px;
+}
+
+#memphone1
+ {
+	margin-left: 110px;
+	width: 16%;
+	height: 50px;
+}
+#memphone2
+ {
+    margin-left:0px;
+	width: 20%;
+	height: 50px;
+}
+#memphone3
+ {
+    margin-left:0px;
+	width: 20%;
+	height: 50px;
 }

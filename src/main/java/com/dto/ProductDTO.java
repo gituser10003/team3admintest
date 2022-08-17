@@ -6,6 +6,7 @@ public class ProductDTO {
 	private int pdprice;
 	private String ctno;
 	private String pdfile;
+	
 	public ProductDTO() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -48,11 +49,11 @@ public class ProductDTO {
 	public void setPdfile(String pdfile) {
 		this.pdfile = pdfile;
 	}
+	
 	@Override
 	public String toString() {
 		return "ProductDTO [pdno=" + pdno + ", pdnm=" + pdnm + ", pdprice=" + pdprice + ", ctno=" + ctno + ", pdfile="
 				+ pdfile + "]";
 	}
-
 	
 }

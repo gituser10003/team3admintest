@@ -12,7 +12,7 @@
 <script type="text/javascript">
 
 </script>
-<link href="css/memberlist.css?ver=1" rel="stylesheet" type="text/css">
+<link href="css/memberlist.css?ver=1.1" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<div class="intro">
@@ -54,17 +54,16 @@ String searchValue = (String)request.getAttribute("searchValue");
 			for (int i = 0; i < list.size(); i++) {
 				MemberDTO dto = list.get(i);
 				String memno = dto.getMemno();
-				String memphone1 = dto.getMemphone1();
-				String memphone2 = dto.getMemphone2();
-				String memphone3 = dto.getMemphone3();
-				String mempasswd = dto.getMempasswd();
-				String mempoint = dto.getMempoint();
+				String phone1 = dto.getPhone1();
+				String phone2 = dto.getPhone2();
+				String phone3 = dto.getPhone3();
+				int mempoint = dto.getMempoint();
 		%>
 	
 		<tr class="admin_board_user_vowel" >
 			
 			<td class="admin_board_user" id="memno" name="memno"><a href="MemberRetrieveServlet?memno=<%=memno%>"><%=memno%></a></td>
-			<td class="admin_board_user" id="memphone1" name="memphone1"><%=memphone1+"-"+memphone2+"-"+memphone3%></td>
+			<td class="admin_board_user" id="memphone1" name="memphone1"><%=phone1+"-"+phone2+"-"+phone3%></td>
 			<td class="admin_board_user" id="mempoint" name="mempoint"><%=mempoint%></td>
 		</tr>
 					<%
@@ -111,6 +110,7 @@ String searchValue = (String)request.getAttribute("searchValue");
         </s_paging>
 			</div><!-- end main1 -->
 		</div><!-- end header -->
+		<a href="memberAdd.jsp" class="signup">회원등록</a>
 	</div><!-- end intro -->
 	
 </body>

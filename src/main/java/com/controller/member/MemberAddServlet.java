@@ -1,55 +1,48 @@
 package com.controller.member;
 
 import java.io.IOException;
-import java.util.HashMap;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
+import com.dto.MemberDTO;
 import com.dto.SawonDTO;
 import com.service.MemberService;
 
-@WebServlet("/MemberUpdateServlet")
-public class MemberUpdateServlet extends HttpServlet {
+@WebServlet("/MemberAddServlet")
+public class MemberAddServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		HttpSession session = request.getSession();
-		SawonDTO dto = (SawonDTO)session.getAttribute("login");
-		String nextPage=null;
-		if (dto!=null) {
+		SawonDTO sdto = (SawonDTO)session.getAttribute("login");
+		String nextPage = null;
+		if (sdto!=null) {
 			String memno = request.getParameter("memno");
 			String phone1 = request.getParameter("phone1");
 			String phone2 = request.getParameter("phone2");
 			String phone3 = request.getParameter("phone3");
 			String mempoint = request.getParameter("mempoint");
 			
-			HashMap<String, Object> map = new HashMap<>();
-			map.put("memno", memno);
-			map.put("phone1", phone1);
-			map.put("phone2", phone2);
-			map.put("phone3", phone3);
-			map.put("mempoint", Integer.parseInt(mempoint));
+			MemberDTO dto =
+					new MemberDTO(memno, phone1, phone2, phone3, Integer.parseInt(mempoint));
 			
 			MemberService service = new MemberService();
-			int num = service.memberUpdate(map);
-			nextPage = "MemberListServlet";
+			int n = service.memberAdd(dto);
+			
+			nextPage = "MemberRetrieveServlet?memno="+memno;
+			session.setAttribute("memberAdd", "회원등록성공");
+			session.setMaxInactiveInterval(5);
 		}else {
-			nextPage="LoginUIServlet";
-			request.setAttribute("mesg", "로그인이 필요한 작업입니다.");
+			nextPage = "LoginUIServlet";
+			session.setAttribute("mesg", "로그인이 필요한 작업입니다.");
 		}
-		RequestDispatcher dis = request.getRequestDispatcher(nextPage);
-		dis.forward(request, response);
-		
-	}//end doGet
+		response.sendRedirect(nextPage);
 
+	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
