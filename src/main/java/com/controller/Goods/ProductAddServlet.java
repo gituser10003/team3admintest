@@ -39,19 +39,17 @@ public class ProductAddServlet extends HttpServlet {
 		String pdnm=request.getParameter("pdnm");
 		String pdprice=request.getParameter("pdprice");
 		String ctno=request.getParameter("ctno");
-		String pdfile=request.getParameter("pdfile");
 	
 		ProductDTO dto=new ProductDTO();
-		dto.setPdno(pdno);
+		dto.setPdno(Integer.parseInt(pdno));
 		dto.setPdnm(pdnm);
 		dto.setPdprice(Integer.parseInt(pdprice));
-		dto.setCtno(ctno);
-		dto.setPdfile(pdfile);
+		dto.setCtno(Integer.parseInt(ctno));
 	
 		ProductService service=new ProductService();
 		int n=service.ProductAdd(dto);
 		
-		nextPage = "ProductRetrieveServlet?pdno="+pdno;
+		nextPage = "ProductListServlet";
 		session.setAttribute("ProductAdd", "상품기입성공");
 		session.setMaxInactiveInterval(5);
 		/* response.sendRedirect("ProductListServlet"); */

@@ -36,7 +36,7 @@ public class ProductDelServlet extends HttpServlet {
 		SawonDTO dto = (SawonDTO)session.getAttribute("login");
 		String nextPage = null;
 		if (dto!=null) {
-			String pdno = request.getParameter("pdno");
+			String pdno = request.getParameter("pdnm");
 			
 			ProductService service = new ProductService();
 			int n = service.ProductDel(pdno);

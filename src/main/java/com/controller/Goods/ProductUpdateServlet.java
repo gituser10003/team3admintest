@@ -44,14 +44,12 @@ public class ProductUpdateServlet extends HttpServlet {
 			String pdnm=request.getParameter("pdnm");
 			String pdprice=request.getParameter("pdprice");
 			String ctno=request.getParameter("ctno");
-			String pdfile=request.getParameter("pdfile");
 			
 			HashMap<String, Object> map= new HashMap<>();
-			map.put("pdno", pdno);
+			map.put("pdno", Integer.parseInt(pdno));
 			map.put("pdnm", pdnm);
 			map.put("pdprice", Integer.parseInt(pdprice));
-			map.put("ctno", ctno);
-			map.put("pdfile", pdfile);
+			map.put("ctno", Integer.parseInt(ctno));
 	
 			
 			ProductService service = new ProductService();

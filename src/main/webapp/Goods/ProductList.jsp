@@ -48,17 +48,15 @@
 						<th class="admin_board_head" >상품명</th>
 						<th class="admin_board_head" >가격</th>
 						<th class="admin_board_head" >물품분류</th>
-						<th class="admin_board_head" >물품파일</th>
 					</tbody>
 					<tbody>
 		<%
 			for (int i = 0; i < list.size(); i++) {
 				ProductDTO dto = list.get(i);
-				String pdno=dto.getPdno();
+				int pdno=dto.getPdno();
 				String pdnm=dto.getPdnm();
 				int pdprice=dto.getPdprice();
-				String ctno=dto.getCtno();
-				String pdfile=dto.getPdfile();
+				int ctno=dto.getCtno();
 			
 		%>
 	
@@ -68,7 +66,6 @@
 			<td class="admin_board_user" id="pdnm" name="pdnm"><%=pdnm%></td>
 			<td class="admin_board_user" id="pdprice" name="pdprice"><%=pdprice%></td>
 			<td class="admin_board_user" id="ctno" name="ctno"><%=ctno%></td>
-			<td class="admin_board_user" id="pdfile" name="pdfile"><%=pdfile%></td>
 		</tr>
 					<%
 			}
@@ -101,7 +98,7 @@
 		          	if(i== curPage){
 		          		out.print(i+"&nbsp;");
 		          	}else{
-		          		out.print("<a href='ProductList?curPage="+i+"&searchName="+searchName+"&searchValue="+searchValue+"'>"+i+"</a>&nbsp;");
+		          		out.print("<a href='ProductListServlet?curPage="+i+"&searchName="+searchName+"&searchValue="+searchValue+"'>"+i+"</a>&nbsp;");
 		          	}
 		        }//end for
 		   %>
