@@ -6,9 +6,9 @@
 
 $(document).ready(function () {
 	//form 서브밋
-/* 	$("form").on("submit", function (event) {
+	$("form").on("submit", function (event) {
 		var userid = $("#pdno").val();
-		var passwd = $("#passwd").val();
+		var passwd = $("#pdnm").val();
 		if (userid.length==0) {
 			alert("pdno 필수")
 			$("#pdno").focus();
@@ -18,25 +18,25 @@ $(document).ready(function () {
 			$("#pdnm").focus();
 			event.preventDefault();
 		}
-	}); */
+	});
 
-/* $("#userid").on("keyup",function(event){	
-	 $.ajax({
-			type : "GET",
-			url : "SawonIdCheckServlet",
-			dataType : "text",//응답 데이터 타입
-			data : {  //서버에 넘겨줄 데이터 
-				userid : $("#userid").val()
-			},
-			success : function(responseData, status, xhr) {
-				console.log(responseData);
-			   $("#result").text(responseData);
-			},
-			error : function(xhr, status, error) {
-				console.log("error");
-			}
-		});
-}); */
+	$("#userid").on("keyup",function(event){	
+		 $.ajax({
+				type : "GET",
+				url : "SawonIdCheckServlet",
+				dataType : "text",//응답 데이터 타입
+				data : {  //서버에 넘겨줄 데이터 
+					userid : $("#userid").val()
+				},
+				success : function(responseData, status, xhr) {
+					console.log(responseData);
+				   $("#result").text(responseData);
+				},
+				error : function(xhr, status, error) {
+					console.log("error");
+				}
+			});
+	});
 
 })//end document
 </script>
@@ -66,20 +66,17 @@ $(document).ready(function () {
     <div class="account">
    상품넘버
    <select class="input_text" id="ctno" name="ctno">
-   <option value="CT01">CT01</option>
-   <option value="CT02">CT02</option>
-   <option value="CT03">CT02</option>
-   <option value="CT04">CT04</option>
-   <option value="CT04">CT04</option>
-   <option value="CT05">CT05</option>
-   <option value="CT06">CT06</option>
+   <option value="01">01</option>
+   <option value="02">02</option>
+   <option value="03">02</option>
+   <option value="04">04</option>
+   <option value="04">04</option>
+   <option value="05">05</option>
+   <option value="06">06</option>
    </select>&nbsp;-
    </div>
    
-   <div class="account">
-   상품파일
-<input type="text" class="input_text" id="pdfile" name="pdfile">
-  </div>
+
   
   <div class="button">
   

@@ -28,18 +28,17 @@ $(document).ready(function () {
 
 //삭제버튼
 	$(".del").on("click",function(){
-		var userid= $(this).attr("data-id");
+		var pdno= $(this).attr("data-id");
 		location.href="ProductDelServlet?pdno="+pdno;
 	});
 })//end document
 </script>
 <%
 ProductDTO dto = (ProductDTO)request.getAttribute("dto");
-String pdno=dto.getPdno();
+int pdno=dto.getPdno();
 String pdnm=dto.getPdnm();
 int pdprice=dto.getPdprice();
-String ctno=dto.getCtno();
-String pdfile=dto.getPdfile();
+int ctno=dto.getCtno();
 %>
 
 <div class="intro">
@@ -49,7 +48,7 @@ String pdfile=dto.getPdfile();
    </ul>
    
    <ul class="jemog">
-    <li>상품 Product 수정 페이지</li>
+    <li>상품 수정 페이지</li>
    </ul>
    
    <div class="account">
@@ -58,7 +57,7 @@ String pdfile=dto.getPdfile();
    <span id="result"></span>
    </div>
    <div class="account">
-   상품명<input type="password" class="input_text" id="pdnm" name="pdnm" value="<%=pdnm%>">
+   상품명<input type="text" class="input_text" id="pdnm" name="pdnm" value="<%=pdnm%>">
    </div>
    <div class="account">
    상품금액<input type="text" class="input_text" id="pdprice" name="pdprice" value="<%=pdprice%>">
@@ -69,10 +68,10 @@ String pdfile=dto.getPdfile();
    <input type="text" class="input_text" id="ctno" name="ctno" value="<%=ctno%>">
    </div>
    
-   <div class="account">
+<%--    <div class="account">
    물품파일
     <input type="text" class="input_text" id="pdfile" name="pdfile" value="<%=pdfile%>">
-   </div>
+   </div> --%>
   <div class="button">
    <div>
    <input class="cancell" type="reset" value="취소">

@@ -17,7 +17,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </select>
     
     <select id="selectPage" resultType="ProductDTO" parameterType="hashmap">
-	select pdno,pdnm,pdprice,ctno,pdfile
+	select pdno,pdnm,pdprice,ctno
 from product
 	
      <where>
@@ -29,11 +29,11 @@ from product
 	  </if>
      </where>
 	
-	order by pdnm desc
+	order by pdno asc
 	</select>
 	
 	<select id="ProductRetrieve" parameterType="string" resultType="ProductDTO">
-select pdno,pdnm,pdprice,ctno,pdfile
+select pdno,pdnm,pdprice,ctno
 from product
 where pdno=#{pdno}
 </select>
@@ -44,14 +44,13 @@ set
 pdno = #{pdno},
 pdnm = #{pdnm},
 pdprice = #{pdprice},
-ctno = #{ctno},
-pdfile = #{pdfile}
-where pdnm = #{pdnm}
+ctno = #{ctno}
+where pdno = #{pdno}
 </update>
 
 <insert id="ProductAdd" parameterType="ProductDTO">
-insert into product (pdno,pdnm,pdprice,ctno,pdfile)
-            values(#{pdno},#{pdnm},#{pdprice},#{ctno},#{pdfile})
+insert into product (pdno,pdnm,pdprice,ctno)
+            values( #{pdno},#{pdnm},#{pdprice},#{ctno})
 </insert>
 
 <delete id="ProductDel" parameterType="String">
