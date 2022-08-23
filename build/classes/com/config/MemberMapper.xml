@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MemberMapper">
+
+<select id="select" resultType="MemberDTO" parameterType="string">
+select memno,memphone1,memphone2,memphone3,mempasswd,mempoint
+from member
+</select>
+
+<select id="MemberRetrieve" parameterType="string" resultType="MemberDTO">
+select memno,memphone1,memphone2,memphone3,mempasswd,mempoint
+from member
+where memno=#{memno}
+</select>
+
+<update id="memberUpdate" parameterType="hashmap">
+update member
+set 
+memno = #{memno},
+memphone1 = #{memphone1},
+memphone2 = #{memphone2},
+memphone3 = #{memphone3},
+mempoint = #{mempoint}
+where memno = #{memno}
+</update>
+
+<delete id="memberDel" parameterType="String">
+delete 
+from member
+where memno = #{memno}
+</delete>
+
+	<select id="selectPage" resultType="MemberDTO" parameterType="hashmap">
+    select memno,memphone1,memphone2,memphone3,mempasswd,mempoint
+    from member
+	
+     <where>
+	 <if test="searchName == 'memno'">
+	       upper(memno)  like upper ('%'||#{searchValue}||'%') 
+	  </if>
+	  <if test="searchName == 'memphone3'">
+	      upper(memphone3) like upper('%'||#{searchValue}||'%') 
+	  </if>
+     </where>
+	
+	order by memno desc
+	</select>
+
+ <select id="totalCount" resultType="int" parameterType="hashmap">
+      select count(*)
+      from member
+       <where>
+	  <if test="searchName == 'memno'">
+	       upper(memno)  like upper ('%'||#{searchValue}||'%') 
+	  </if>
+	  <if test="searchName == 'memphone3'">
+	      upper(memphone3) like upper('%'||#{searchValue}||'%') 
+	  </if>
+     </where>
+    </select>
+
+</mapper>

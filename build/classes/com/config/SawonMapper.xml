@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="SawonMapper">
+
+<insert id="sawonAdd" parameterType="SawonDTO">
+insert into sawon (userid,passwd,username,phonenumber1,phonenumber2,phonenumber3,
+                   birthday1,birthday2,birthday3,email1,email2, sawongrade)
+            values( #{userid},#{passwd},#{username},#{phonenumber1},#{phonenumber2},#{phonenumber3},
+                   #{birthday1},#{birthday2},#{birthday3},#{email1},#{email2},#{sawongrade})
+</insert>
+
+<select id="idCheck" parameterType="string" resultType="int">
+select count(*)
+from sawon
+where userid = #{userid}
+</select>
+
+<select id="login" parameterType="hashmap" resultType="SawonDTO">
+select userid,passwd,username,phonenumber1,phonenumber2,phonenumber3,
+birthday1,birthday2,birthday3,email1,email2, sawongrade
+from sawon
+where userid = #{userid} and passwd = #{passwd}
+</select>
+
+<select id="selectAll" resultType="SawonDTO" parameterType="string">
+select userid, passwd,username,phonenumber1,phonenumber2,phonenumber3,birthday1,birthday2,birthday3,
+email1,email2,sawongrade
+from sawon
+</select>
+
+<select id="SawonRetrieve" parameterType="string" resultType="SawonDTO">
+select userid, passwd,username,phonenumber1,phonenumber2,phonenumber3,birthday1,birthday2,birthday3,
+email1,email2,sawongrade
+from sawon
+where userid=#{userid}
+</select>
+
+ <delete id="SawonDel" parameterType="String">
+    delete
+    from sawon
+    where userid = #{userid}
+   </delete>
+
+<update id="sawonUpdate" parameterType="SawonDTO">
+update sawon
+set userid = #{userid},
+passwd = #{passwd},
+username = #{username},
+phonenumber1 = #{phonenumber1},
+phonenumber2 = #{phonenumber2},
+phonenumber3 = #{phonenumber3},
+birthday1 = #{birthday1},
+birthday2 = #{birthday2},
+birthday3 = #{birthday3},
+email1 = #{email1},
+email2 = #{email2},
+sawongrade = #{sawongrade}
+where userid = #{userid}
+</update>
+
+  <select id="totalCount" resultType="int" parameterType="hashmap">
+      select count(*)
+      from sawon
+       <where>
+	  <if test="searchName == 'username'">
+	       upper(username)  like upper ('%'||#{searchValue}||'%') 
+	  </if>
+	  <if test="searchName == 'sawongrade'">
+	      upper(sawongrade) like upper('%'||#{searchValue}||'%') 
+	  </if>
+     </where>
+    </select>
+
+	<select id="selectPage" resultType="SawonDTO" parameterType="hashmap">
+	select userid, passwd,username,phonenumber1,phonenumber2,phonenumber3,birthday1,birthday2,birthday3,
+email1,email2,sawongrade
+from sawon
+	
+     <where>
+	 <if test="searchName == 'username'">
+	       upper(username)  like upper ('%'||#{searchValue}||'%') 
+	  </if>
+	  <if test="searchName == 'sawongrade'">
+	      upper(sawongrade) like upper('%'||#{searchValue}||'%') 
+	  </if>
+     </where>
+	
+	order by username desc
+	</select>
+	
+	
+</mapper>
