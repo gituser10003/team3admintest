@@ -8,6 +8,22 @@ margin: 0px;
 padding: 0px;
 color : #000;
 }
+
+.signup{
+width: 140px;
+height: 40px;
+border: 3px solid black;
+border-radius: 1em;
+display : flex;
+background-color: black;
+color: white;
+font-size: 25px;
+margin-top : 95px;
+margin-left : 850px;
+justify-content: center;
+align-items: center;
+}
+
 .toptop{
 	display: flex;
 }

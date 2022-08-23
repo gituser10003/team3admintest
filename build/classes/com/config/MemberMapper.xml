@@ -5,12 +5,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="MemberMapper">
 
 <select id="select" resultType="MemberDTO" parameterType="string">
-select memno,memphone1,memphone2,memphone3,mempasswd,mempoint
+select memno,phone1,phone2,phone3,mempoint
 from member
 </select>
 
 <select id="MemberRetrieve" parameterType="string" resultType="MemberDTO">
-select memno,memphone1,memphone2,memphone3,mempasswd,mempoint
+select memno,phone1,phone2,phone3,mempoint
 from member
 where memno=#{memno}
 </select>
@@ -19,9 +19,9 @@ where memno=#{memno}
 update member
 set 
 memno = #{memno},
-memphone1 = #{memphone1},
-memphone2 = #{memphone2},
-memphone3 = #{memphone3},
+phone1 = #{phone1},
+phone2 = #{phone2},
+phone3 = #{phone3},
 mempoint = #{mempoint}
 where memno = #{memno}
 </update>
@@ -33,15 +33,15 @@ where memno = #{memno}
 </delete>
 
 	<select id="selectPage" resultType="MemberDTO" parameterType="hashmap">
-    select memno,memphone1,memphone2,memphone3,mempasswd,mempoint
+    select memno,phone1,phone2,phone3,mempoint
     from member
 	
      <where>
 	 <if test="searchName == 'memno'">
 	       upper(memno)  like upper ('%'||#{searchValue}||'%') 
 	  </if>
-	  <if test="searchName == 'memphone3'">
-	      upper(memphone3) like upper('%'||#{searchValue}||'%') 
+	  <if test="searchName == 'phone3'">
+	      upper(phone3) like upper('%'||#{searchValue}||'%') 
 	  </if>
      </where>
 	
@@ -55,10 +55,15 @@ where memno = #{memno}
 	  <if test="searchName == 'memno'">
 	       upper(memno)  like upper ('%'||#{searchValue}||'%') 
 	  </if>
-	  <if test="searchName == 'memphone3'">
-	      upper(memphone3) like upper('%'||#{searchValue}||'%') 
+	  <if test="searchName == 'phone3'">
+	      upper(phone3) like upper('%'||#{searchValue}||'%') 
 	  </if>
      </where>
     </select>
+
+<insert id="memberAdd" parameterType="MemberDTO">
+insert into member (memno,phone1,phone2,phone3,mempoint)
+                  values(#{memno},#{phone1},#{phone2},#{phone3},#{mempoint})
+</insert>
 
 </mapper>

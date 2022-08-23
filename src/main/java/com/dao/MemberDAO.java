@@ -21,7 +21,7 @@ public class MemberDAO {
 		return n;
 	}
 
-	public int memberUpdate(SqlSession session, HashMap<String, String> map) {
+	public int memberUpdate(SqlSession session, HashMap<String, Object> map) {
 		int n = session.update("MemberMapper.memberUpdate", map);
 		return n;
 	}
@@ -47,6 +47,11 @@ public class MemberDAO {
 	
 	public int totalCount(SqlSession session,HashMap<String, String> map) {
 		return session.selectOne("MemberMapper.totalCount",map);
+	}
+
+	public int memberAdd(SqlSession session, MemberDTO dto) {
+		int n = session.insert("MemberMapper.memberAdd", dto);
+		return n;
 	}
 
 }

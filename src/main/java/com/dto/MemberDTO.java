@@ -1,83 +1,73 @@
 package com.dto;
 
 public class MemberDTO {
-
-	private String memno;
-	private String memphone1;
-	private String memphone2;
-	private String memphone3;
-	private String mempasswd;
-	private String mempoint;
+	
+    int memno;
+	String phone1;
+	String phone2;
+	String phone3;
+	int mempoint;
 	
 	public MemberDTO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public MemberDTO(String memno, String memphone1, String memphone2, String memphone3, String mempasswd,
-			String mempoint) {
+	public MemberDTO(int memno, String phone1, String phone2, String phone3, int mempoint) {
 		super();
 		this.memno = memno;
-		this.memphone1 = memphone1;
-		this.memphone2 = memphone2;
-		this.memphone3 = memphone3;
-		this.mempasswd = mempasswd;
+		this.phone1 = phone1;
+		this.phone2 = phone2;
+		this.phone3 = phone3;
 		this.mempoint = mempoint;
 	}
 
-	public String getMemno() {
+	public int getMemno() {
 		return memno;
 	}
 
-	public void setMemno(String memno) {
+	public void setMemno(int memno) {
 		this.memno = memno;
 	}
 
-	public String getMemphone1() {
-		return memphone1;
+	public String getPhone1() {
+		return phone1;
 	}
 
-	public void setMemphone1(String memphone1) {
-		this.memphone1 = memphone1;
+	public void setPhone1(String phone1) {
+		this.phone1 = phone1;
 	}
 
-	public String getMemphone2() {
-		return memphone2;
+	public String getPhone2() {
+		return phone2;
 	}
 
-	public void setMemphone2(String memphone2) {
-		this.memphone2 = memphone2;
+	public void setPhone2(String phone2) {
+		this.phone2 = phone2;
 	}
 
-	public String getMemphone3() {
-		return memphone3;
+	public String getPhone3() {
+		return phone3;
 	}
 
-	public void setMemphone3(String memphone3) {
-		this.memphone3 = memphone3;
+	public void setPhone3(String phone3) {
+		this.phone3 = phone3;
 	}
 
-	public String getMempasswd() {
-		return mempasswd;
-	}
-
-	public void setMempasswd(String mempasswd) {
-		this.mempasswd = mempasswd;
-	}
-
-	public String getMempoint() {
+	public int getMempoint() {
 		return mempoint;
 	}
 
-	public void setMempoint(String mempoint) {
+	public void setMempoint(int mempoint) {
 		this.mempoint = mempoint;
 	}
 
 	@Override
 	public String toString() {
-		return "MemberDTO [memno=" + memno + ", memphone1=" + memphone1 + ", memphone2=" + memphone2 + ", memphone3="
-				+ memphone3 + ", mempasswd=" + mempasswd + ", mempoint=" + mempoint + "]";
+		return "MemberDTO [memno=" + memno + ", phone1=" + phone1 + ", phone2=" + phone2 + ", phone3=" + phone3
+				+ ", mempoint=" + mempoint + "]";
 	}
+	
 	
 	
 	

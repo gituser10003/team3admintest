@@ -14,24 +14,17 @@ import com.dto.SawonPageDTO;
 import com.service.ProductService;
 import com.service.SawonService;
 
-/**
- * Servlet implementation class ProductList
- */
+
 @WebServlet("/ProductListServlet")
 public class ProductListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+  
     public ProductListServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String curPage = request.getParameter("curPage");//현재페이지 
 		if(curPage == null) curPage = "1";//시작시 현재페이지 1 
@@ -51,9 +44,7 @@ public class ProductListServlet extends HttpServlet {
 	}
 		
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
