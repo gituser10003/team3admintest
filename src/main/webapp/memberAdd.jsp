@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<link href="css/memberAdd.css?ver=1" rel="stylesheet" type="text/css">
+<link href="css/memberAdd.css?ver=1.1" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function () {
@@ -41,14 +41,14 @@ $(document).ready(function () {
    
    <div class="account">
    핸드폰번호
-   <select class="input_text" id="memphone1" name="memphone1">
+   <select class="input_text" id="phone1" name="phone1">
    <option value="010">010</option>
    <option value="011">011</option>
    <option value="012">012</option>
    <option value="070">070</option>
    </select>&nbsp;-
-   <input type="text" class="input_text" id="memphone2" name="memphone2">&nbsp;-
-   <input type="text" class="input_text" id="memphone3" name="memphone3">
+   <input type="text" class="input_text" id="phone2" name="phone2">&nbsp;-
+   <input type="text" class="input_text" id="phone3" name="phone3">
    </div>
    
    <div class="account">

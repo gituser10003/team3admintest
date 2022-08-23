@@ -63,7 +63,7 @@ String searchValue = (String)request.getAttribute("searchValue");
 		<tr class="admin_board_user_vowel" >
 			
 			<td class="admin_board_user" id="memno" name="memno"><a href="MemberRetrieveServlet?memno=<%=memno%>"><%=memno%></a></td>
-			<td class="admin_board_user" id="memphone1" name="memphone1"><%=phone1+"-"+phone2+"-"+phone3%></td>
+			<td class="admin_board_user" id="phone1" name="phone1"><%=phone1+"-"+phone2+"-"+phone3%></td>
 			<td class="admin_board_user" id="mempoint" name="mempoint"><%=mempoint%></td>
 		</tr>
 					<%
