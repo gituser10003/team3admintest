@@ -53,7 +53,7 @@ String searchValue = (String)request.getAttribute("searchValue");
 		<%
 			for (int i = 0; i < list.size(); i++) {
 				MemberDTO dto = list.get(i);
-				String memno = dto.getMemno();
+				int memno = dto.getMemno();
 				String phone1 = dto.getPhone1();
 				String phone2 = dto.getPhone2();
 				String phone3 = dto.getPhone3();

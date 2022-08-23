@@ -2,7 +2,7 @@ package com.dto;
 
 public class MemberDTO {
 	
-	String memno;
+    int memno;
 	String phone1;
 	String phone2;
 	String phone3;
@@ -13,7 +13,7 @@ public class MemberDTO {
 		// TODO Auto-generated constructor stub
 	}
 
-	public MemberDTO(String memno, String phone1, String phone2, String phone3, int mempoint) {
+	public MemberDTO(int memno, String phone1, String phone2, String phone3, int mempoint) {
 		super();
 		this.memno = memno;
 		this.phone1 = phone1;
@@ -22,11 +22,11 @@ public class MemberDTO {
 		this.mempoint = mempoint;
 	}
 
-	public String getMemno() {
+	public int getMemno() {
 		return memno;
 	}
 
-	public void setMemno(String memno) {
+	public void setMemno(int memno) {
 		this.memno = memno;
 	}
 
@@ -67,6 +67,8 @@ public class MemberDTO {
 		return "MemberDTO [memno=" + memno + ", phone1=" + phone1 + ", phone2=" + phone2 + ", phone3=" + phone3
 				+ ", mempoint=" + mempoint + "]";
 	}
+	
+	
 	
 	
 }

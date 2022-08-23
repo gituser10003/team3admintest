@@ -3,9 +3,23 @@
 <link href="css/memberAdd.css?ver=1" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
-
 $(document).ready(function () {
-
+		$("#userid").on("keyup",function(event){	
+			 $.ajax({
+					type : "GET",
+					url : "SawonIdCheckServlet",
+					dataType : "text",//응답 데이터 타입
+					data : {  //서버에 넘겨줄 데이터 
+						userid : $("#userid").val()
+					},
+					success : function(responseData, status, xhr) {
+						console.log(responseData);
+					   $("#result").text(responseData);
+					},
+					error : function(xhr, status, error) {
+						console.log("error");
+					}
+				});
 })//end document
 </script>
 <form action="MemberAddServlet" method="get">

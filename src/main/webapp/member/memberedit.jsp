@@ -37,7 +37,7 @@ $(".del").on("click",function(){
 </script>
 <%
 MemberDTO dto = (MemberDTO)request.getAttribute("dto");
-String memno = dto.getMemno();
+int memno = dto.getMemno();
 String phone1 = dto.getPhone1();
 String phone2 = dto.getPhone2();
 String phone3 = dto.getPhone3();

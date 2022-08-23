@@ -32,7 +32,7 @@ public class MemberUpdateServlet extends HttpServlet {
 			String mempoint = request.getParameter("mempoint");
 			
 			HashMap<String, Object> map = new HashMap<>();
-			map.put("memno", memno);
+			map.put("memno", Integer.parseInt(memno));
 			map.put("phone1", phone1);
 			map.put("phone2", phone2);
 			map.put("phone3", phone3);

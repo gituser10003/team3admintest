@@ -27,13 +27,17 @@ public class MemberAddServlet extends HttpServlet {
 			String phone3 = request.getParameter("phone3");
 			String mempoint = request.getParameter("mempoint");
 			
-			MemberDTO dto =
-					new MemberDTO(memno, phone1, phone2, phone3, Integer.parseInt(mempoint));
+			MemberDTO dto = new MemberDTO();
+			dto.setMemno(Integer.parseInt(memno));
+			dto.setPhone1(phone1);
+			dto.setPhone2(phone2);
+			dto.setPhone3(phone3);
+			dto.setMempoint(Integer.parseInt(mempoint));
 			
 			MemberService service = new MemberService();
 			int n = service.memberAdd(dto);
 			
-			nextPage = "MemberRetrieveServlet?memno="+memno;
+			nextPage = "MemberListServlet";
 			session.setAttribute("memberAdd", "회원등록성공");
 			session.setMaxInactiveInterval(5);
 		}else {
