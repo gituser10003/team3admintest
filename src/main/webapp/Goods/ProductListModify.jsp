@@ -4,8 +4,12 @@
 <link href="css/Page5.css?ver=1.1" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
-
+function upload() {
+	var url ="imageupload.jsp";
+		window.open(url, "_blank", "height:50, width:50");
+	};
 $(document).ready(function () {
+
 
 /* $("#userid").on("keyup",function(event){	
 	 $.ajax({
@@ -68,10 +72,10 @@ int ctno=dto.getCtno();
    <input type="text" class="input_text" id="ctno" name="ctno" value="<%=ctno%>">
    </div>
    
-<%--    <div class="account">
-   물품파일
-    <input type="text" class="input_text" id="pdfile" name="pdfile" value="<%=pdfile%>">
-   </div> --%>
+ <div class="account">
+   이미지 삽입
+    <input type="button" class="openimage" value="이미지삽입" onclick="upload()"/>
+   </div>
   <div class="button">
    <div>
    <input class="cancell" type="reset" value="취소">

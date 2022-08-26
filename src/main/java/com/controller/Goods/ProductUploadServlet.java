@@ -1,0 +1,114 @@
+package com.controller.Goods;
+
+import java.io.File;
+import java.io.IOException;
+
+import java.util.Iterator;
+import java.util.List;
+
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.FileUploadException;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
+
+/**
+ * Servlet implementation class ProductUploadServlet
+ */
+@WebServlet("/ProductUploadServlet")
+public class ProductUploadServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ProductUploadServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//multipart 여부 검사
+				boolean isMultipart= ServletFileUpload.isMultipartContent(request);
+				if(isMultipart) {
+					System.out.println("파일요청맞음");
+					// Create a factory for disk-based file items
+					DiskFileItemFactory factory= new DiskFileItemFactory();
+					// Configure a repository (to ensure a secure temp location is used)
+					ServletContext servletContext= this.getServletConfig().getServletContext();
+					File repository= (File)servletContext.getAttribute("javax.servlet.context.tempdir");
+					factory.setRepository(repository);
+					
+					// Create a new file upload handler
+					ServletFileUpload upload= new ServletFileUpload(factory);
+					//파일크기지정
+					//1kb=1024byte
+					upload.setFileSizeMax(1024*1024*5); //5M
+					upload.setFileSizeMax(1024*1024*10); //10M
+					String fieldName=null;
+					String fileName= null;
+					String contentType= null;
+					boolean isInMemory= false;
+					long sizeInBytes=0;
+					//request에서 파싱
+					
+					
+					
+					try {
+						List<FileItem> items= upload.parseRequest(request);
+						
+						Iterator<FileItem> iter= items.iterator();
+						while (iter.hasNext()) {
+							FileItem item= iter.next();
+							if(item.isFormField()) {
+								//type="file"이 아닌 것의 처리
+								String name = item.getFieldName();
+								String value= item.getString("utf-8");
+								System.out.println(name+"\t"+ value);
+						}else {
+							//type="file"의 처리 
+							fieldName= item.getFieldName();
+							fileName= item.getName();
+							contentType= item.getContentType();
+							isInMemory=item.isInMemory();
+							sizeInBytes= item.getSize();
+		System.out.println("fieldName====" + fieldName);					
+		System.out.println("fileName====" + fileName);					
+		System.out.println("contentType====" + contentType);					
+		System.out.println("isInMemory====" + isInMemory);					
+		System.out.println("sizeInBytes====" + sizeInBytes);		
+						//file 저장
+			File f= new File("C:\\Users\\green\\Desktop", fileName);
+			try {
+				item.write(f);
+			}catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+						}//end else
+					}//end while
+						
+					}catch(FileUploadException e) {
+						e.printStackTrace();
+					}
+					
+				}
+			}
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

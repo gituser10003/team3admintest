@@ -3,7 +3,10 @@
 <link href="css/ProductAdd.css?ver=1.0" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
-
+function upload() {
+	var url ="imageupload.jsp";
+		window.open(url, "_blank", "height:50, width:50");
+	};
 $(document).ready(function () {
 	//form 서브밋
 	$("form").on("submit", function (event) {
@@ -73,10 +76,13 @@ $(document).ready(function () {
    <option value="04">04</option>
    <option value="05">05</option>
    <option value="06">06</option>
-   </select>&nbsp;-
+   </select>&nbsp;
    </div>
    
-
+ <div class="account">
+   이미지 삽입
+    <input type="button" class="openimage" value="이미지삽입" onclick="upload()"/>
+   </div>
   
   <div class="button">
   
