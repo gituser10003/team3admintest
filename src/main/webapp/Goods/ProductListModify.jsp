@@ -88,6 +88,6 @@ int ctno=dto.getCtno();
      <div>
      <input onclick="return confirm('정말로 삭제하시겠습니까?')" type="button" class="del"  value="삭제" id="xx<%=pdno %>" data-id="<%=pdno%>" />
      </div> 
-
+ 
 
 </div>
