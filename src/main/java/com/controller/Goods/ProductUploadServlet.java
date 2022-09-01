@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -38,6 +39,7 @@ public class ProductUploadServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//multipart 여부 검사
+				request.setCharacterEncoding("UTF-8");
 				boolean isMultipart= ServletFileUpload.isMultipartContent(request);
 				if(isMultipart) {
 					System.out.println("파일요청맞음");
@@ -100,7 +102,6 @@ public class ProductUploadServlet extends HttpServlet {
 					}catch(FileUploadException e) {
 						e.printStackTrace();
 					}
-					
 				}
 			}
 	/**

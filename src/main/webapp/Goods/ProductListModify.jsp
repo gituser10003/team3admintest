@@ -78,7 +78,7 @@ int ctno=dto.getCtno();
    </div>
   <div class="button">
    <div>
-   <input class="cancell" type="reset" value="취소">
+   <input class="cancell" type="button" onclick="location.href='ProductListServlet'" value="취소">
    </div>
    <div>
    <input onclick="return confirm('정말로 수정하시겠습니까?')" class="check" type="submit" value="확인">

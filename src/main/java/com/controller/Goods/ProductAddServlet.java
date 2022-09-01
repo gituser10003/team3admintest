@@ -31,7 +31,8 @@ public class ProductAddServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 HttpSession session = request.getSession();
+		request.setCharacterEncoding("UTF-8");
+		HttpSession session = request.getSession();
 	      SawonDTO sdto = (SawonDTO)session.getAttribute("login");
 		 String nextPage = null;
 	      if(sdto!=null) {//회원인경우 
@@ -41,6 +42,10 @@ public class ProductAddServlet extends HttpServlet {
 		String ctno=request.getParameter("ctno");
 	
 		ProductDTO dto=new ProductDTO();
+		System.out.println(pdno);
+		System.out.println(pdnm);
+		System.out.println(pdprice);
+		System.out.println(ctno);
 		dto.setPdno(Integer.parseInt(pdno));
 		dto.setPdnm(pdnm);
 		dto.setPdprice(Integer.parseInt(pdprice));
