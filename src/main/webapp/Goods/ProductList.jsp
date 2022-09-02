@@ -12,7 +12,7 @@
 <script type="text/javascript">
 
 </script>
-<link href="css/ProductList.css?ver=1" rel="stylesheet" type="text/css">
+<link href="css/ProductList.css?ver=1.1" rel="stylesheet" type="text/css">
 
 </head>
 <body>
