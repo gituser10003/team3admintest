@@ -6,17 +6,23 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+
+import com.dto.ProductDTO;
+import com.dto.SawonDTO;
+import com.service.ProductService;
 
 /**
  * Servlet implementation class ProductUploadServlet
@@ -38,6 +44,10 @@ public class ProductUploadServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//multipart 여부 검사
+				request.setCharacterEncoding("UTF-8");
+				HttpSession session = request.getSession();
+			      SawonDTO sdto = (SawonDTO)session.getAttribute("login");
+				 String nextPage = null;
 				boolean isMultipart= ServletFileUpload.isMultipartContent(request);
 				if(isMultipart) {
 					System.out.println("파일요청맞음");
@@ -60,20 +70,31 @@ public class ProductUploadServlet extends HttpServlet {
 					boolean isInMemory= false;
 					long sizeInBytes=0;
 					//request에서 파싱
-					
-					
-					
 					try {
 						List<FileItem> items= upload.parseRequest(request);
 						
 						Iterator<FileItem> iter= items.iterator();
+						String pdno=null;
+						String pdnm=null;
+						String pdprice=null;
+						String ctno=null;
 						while (iter.hasNext()) {
 							FileItem item= iter.next();
 							if(item.isFormField()) {
 								//type="file"이 아닌 것의 처리
 								String name = item.getFieldName();
-								String value= item.getString("utf-8");
-								System.out.println(name+"\t"+ value);
+								if (name.equals("pdno")) {
+									pdno = item.getString("utf-8");
+								}
+								if (name.equals("pdnm")) {
+									pdnm = item.getString("utf-8");
+								}
+								if (name.equals("pdprice")) {
+									pdprice = item.getString("utf-8");
+								}
+								if (name.equals("ctno")) {
+									ctno = item.getString("utf-8");
+								}
 						}else {
 							//type="file"의 처리 
 							fieldName= item.getFieldName();
@@ -88,6 +109,8 @@ public class ProductUploadServlet extends HttpServlet {
 		System.out.println("sizeInBytes====" + sizeInBytes);		
 						//file 저장
 			File f= new File("C:\\Users\\green\\Desktop", fileName);
+			  nextPage = "LoginUIServlet";
+			  session.setAttribute("mesg", "로그인이 필요한 작업입니다.");
 			try {
 				item.write(f);
 			}catch (Exception e) {
@@ -96,11 +119,24 @@ public class ProductUploadServlet extends HttpServlet {
 			}
 						}//end else
 					}//end while
-						
+						ProductDTO dto=new ProductDTO();
+						dto.setPdno(Integer.parseInt(pdno));
+						dto.setPdnm(pdnm);
+						dto.setPdprice(Integer.parseInt(pdprice));
+						dto.setCtno(Integer.parseInt(ctno));
+						System.out.println(pdno);
+						System.out.println(pdnm);
+						System.out.println(pdprice);
+						System.out.println(ctno);
+						ProductService service=new ProductService();
+						int n=service.ProductAdd(dto);
+						nextPage = "ProductListServlet";
+						session.setAttribute("ProductAdd", "상품기입성공");
+						session.setMaxInactiveInterval(5);
+						  response.sendRedirect(nextPage);
 					}catch(FileUploadException e) {
 						e.printStackTrace();
 					}
-					
 				}
 			}
 	/**
