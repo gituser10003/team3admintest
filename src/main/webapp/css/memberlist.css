@@ -24,6 +24,16 @@ justify-content: center;
 align-items: center;
 }
 
+.back{
+	margin-left: 10px;
+	margin-top: 570px;
+}
+
+.backimage{
+    width: 90px;
+	height: 90px;
+}
+
 .toptop{
 	display: flex;
 }
@@ -137,4 +147,14 @@ margin-left: 30px;
 .paging{
 	align-items: center;
 	margin: auto;
+}
+
+.back{
+	margin-left: 10px;
+	margin-top: 460px;
+}
+
+.backimage{
+    width: 90px;
+	height: 90px;
 }

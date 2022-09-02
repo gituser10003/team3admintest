@@ -3,10 +3,6 @@
 <link href="css/ProductAdd.css?ver=1.0" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
-function upload() {
-	var url ="imageupload.jsp";
-		window.open(url, "_blank", "height:50, width:50");
-	};
 $(document).ready(function () {
 	//form 서브밋
 	$("form").on("submit", function (event) {
@@ -41,9 +37,11 @@ $(document).ready(function () {
 			});
 	});
 
+
 })//end document
+
 </script>
-<form action="ProductAddServlet" method="get">
+<form action="ProductUploadServlet" method="post" id="uploadfile" enctype="multipart/form-data">
 <div class="intro">
  
    <ul class="logo">
@@ -79,20 +77,20 @@ $(document).ready(function () {
    </select>&nbsp;
    </div>
    
- <div class="account">
-   이미지 삽입
-    <input type="button" class="openimage" value="이미지삽입" onclick="upload()"/>
-   </div>
+<div  class="account" >
+상품 이미지: &nbsp;&nbsp;&nbsp; <input class="input_text" type="file" name="theFile"><br/>
+ </div> 
   
   <div class="button">
   
-   <div>
-   <input class="cancell" type="reset" value="취소">
+  <div>
+   <input class="cancell" type="button" onclick="location.href='ProductListServlet'" value="취소">
    </div>
    <div>
-   <input class="check" type="submit" value="상품생성">
+   <input class="check" type="submit" value="상품생성" id="upload"> 
    </div>
    </div> 
+   
 </div>
 
 </form>

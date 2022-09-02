@@ -46,7 +46,7 @@ int ctno=dto.getCtno();
 %>
 
 <div class="intro">
- <form action="ProductUpdateServlet" method="get">
+ <form action="ProductUpdateServlet" method="post" id="uploadfile" enctype="multipart/form-data">
    <ul class="logo">
     <li><a href="Mainpage1.jsp">DMN COFFEE</a></li>
    </ul>
@@ -72,13 +72,12 @@ int ctno=dto.getCtno();
    <input type="text" class="input_text" id="ctno" name="ctno" value="<%=ctno%>">
    </div>
    
- <div class="account">
-   이미지 삽입
-    <input type="button" class="openimage" value="이미지삽입" onclick="upload()"/>
-   </div>
+<div  class="account" >
+상품 이미지: &nbsp;&nbsp;&nbsp; <input class="input_text" type="file" name="theFile"><br/>
+ </div> 
   <div class="button">
    <div>
-   <input class="cancell" type="reset" value="취소">
+   <input class="cancell" type="button" onclick="location.href='ProductListServlet'" value="취소">
    </div>
    <div>
    <input onclick="return confirm('정말로 수정하시겠습니까?')" class="check" type="submit" value="확인">

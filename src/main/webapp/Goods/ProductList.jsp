@@ -27,6 +27,7 @@
 		<div class="header">
 
 			<div class="main1">
+			<div class="toptop">
 				<ul>
 					<li><a href="main.jsp"><img src="images/menu_home.png"
 							style="width: 50px; height: auto"></a></li>
@@ -34,10 +35,18 @@
 				<ul class="logo">
 					<li><a href="main.jsp">DMN COFFEE</a></li>
 				</ul>
-
-				<div class="modify_title">
-					상품 관리 리스트v1
-					
+				</div>
+				<div class="ttp">
+				
+				<ul class="modify_title">
+					<li>상품 관리 리스트v1</li>
+			    </ul>
+			    
+			    <ul class="detail">
+			    <li><a class="category">카테고리</a>&nbsp;</li>
+			    <li><a class="option">옵션</a></li>
+			    </ul>
+			    
 				</div>
 
 <table class="admin_board_wrap">
@@ -108,6 +117,12 @@
 			</div><!-- end main1 -->
 		</div><!-- end header -->
 		<a href="ProductAdd.jsp" class="signup">상품생성</a>
+		
+		<div class="back">
+		<ul>
+		<li><a href="Page2.jsp"><img class="backimage" src="images/back.png"></a></li>
+		</ul>
+		</div>
 	</div><!-- end intro -->
 	 
 </body>
