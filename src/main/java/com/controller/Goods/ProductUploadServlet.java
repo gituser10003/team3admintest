@@ -87,7 +87,7 @@ public class ProductUploadServlet extends HttpServlet {
 		System.out.println("isInMemory====" + isInMemory);					
 		System.out.println("sizeInBytes====" + sizeInBytes);		
 						//file 저장
-			File f= new File("C:\\Users\\green\\Desktop", fileName);
+			File f= new File("C:\\Users\\user\\OneDrive\\바탕 화면\\프로젝트 준비\\projectimage", fileName);
 			try {
 				item.write(f);
 			}catch (Exception e) {
