@@ -111,6 +111,14 @@ String searchValue = (String)request.getAttribute("searchValue");
 			</div><!-- end main1 -->
 		</div><!-- end header -->
 		<a href="memberAdd.jsp" class="signup">회원등록</a>
+		
+		
+		<div class="back">
+		<ul>
+		<li><a href="Page2.jsp"><img class="backimage" src="images/back.png"></a></li>
+		</ul>
+		</div>
+		
 	</div><!-- end intro -->
 	
 </body>

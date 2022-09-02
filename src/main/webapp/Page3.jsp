@@ -295,7 +295,7 @@ $("#userid").on("keyup",function(event){
   <div class="button">
   
    <div>
-   <input class="cancell" type="reset" value="취소">
+   <input class="cancell" onclick="location.href='main.jsp'" value="취소">
    </div>
    <div>
    <input class="check" type="submit" value="회원가입">

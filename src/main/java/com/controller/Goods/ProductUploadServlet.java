@@ -108,7 +108,7 @@ public class ProductUploadServlet extends HttpServlet {
 		System.out.println("isInMemory====" + isInMemory);					
 		System.out.println("sizeInBytes====" + sizeInBytes);		
 						//file 저장
-			File f= new File("C:\\Users\\green\\Desktop", fileName);
+			File f= new File("C:\\upload", fileName);
 			  nextPage = "LoginUIServlet";
 			  session.setAttribute("mesg", "로그인이 필요한 작업입니다.");
 			try {

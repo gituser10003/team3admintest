@@ -125,6 +125,11 @@
         </s_paging>
 			</div><!-- end main1 -->
 		</div><!-- end header -->
+		<div>
+		<ul class="back">
+		<li><a href="Page2.jsp"><img class="backimage" src="images/back.png"></a></li>
+		</ul>
+		</div>
 	</div><!-- end intro -->
 	
 </body>
