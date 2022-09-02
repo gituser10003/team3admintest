@@ -41,7 +41,7 @@ $(document).ready(function () {
 })//end document
 
 </script>
-<form action="ProductAddServlet" method="post" id="uploadfile" enctype="multipart/form-data">
+<form action="ProductUploadServlet" method="post" id="uploadfile" enctype="multipart/form-data">
 <div class="intro">
  
    <ul class="logo">
@@ -78,14 +78,13 @@ $(document).ready(function () {
    </div>
    
 <div  class="account" >
-File to upload: &nbsp;&nbsp;&nbsp; <input class="input_text" type="file" name="theFile"><br/>
-<!-- 	<button onClick="uploadfile(event)" >생성</button> -->
+상품 이미지: &nbsp;&nbsp;&nbsp; <input class="input_text" type="file" name="theFile"><br/>
  </div> 
   
   <div class="button">
   
-   <div>
-   <input class="cancell" type="reset" value="취소">
+  <div>
+   <input class="cancell" type="button" onclick="location.href='ProductListServlet'" value="취소">
    </div>
    <div>
    <input class="check" type="submit" value="상품생성" id="upload"> 
