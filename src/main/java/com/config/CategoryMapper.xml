@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="CategoryMapper">
+
+<select id="selectAll" resultType="CategoryDTO" parameterType="string">
+select ctno, ctnm
+from category
+</select>
+
+<select id="CategoryRetrieve" parameterType="string" resultType="CategoryDTO">
+select ctno,ctnm
+from category
+where ctno=#{ctno}
+</select>
+
+<update id="categoryUpdate" parameterType="hashmap">
+update category
+set
+ctno = #{ctno},
+ctnm = #{ctnm}
+where ctno = #{ctno}
+</update>
+
+<delete id="categoryDel" parameterType="String">
+delete 
+from category
+where ctno = #{ctno}
+</delete>
+
+<insert id="categoryAdd" parameterType="CategoryDTO">
+insert into category (ctno,ctnm)
+               values(#{ctno},#{ctnm})
+</insert>
+
+	<select id="selectPage" resultType="CategoryDTO" parameterType="hashmap">
+    select ctno, ctnm
+    from category
+	
+     <where>
+	 <if test="searchName == 'ctno'">
+	       upper(ctno)  like upper ('%'||#{searchValue}||'%') 
+	  </if>
+	  <if test="searchName == 'ctnm'">
+	      upper(ctnm) like upper('%'||#{searchValue}||'%') 
+	  </if>
+     </where>
+	
+	order by ctno desc
+	</select>
+
+ <select id="totalCount" resultType="int" parameterType="hashmap">
+      select count(*)
+      from category
+ 
+       <where>
+	  <if test="searchName == 'ctno'">
+	       upper(ctno)  like upper ('%'||#{searchValue}||'%') 
+	  </if>
+	  <if test="searchName == 'ctnm'">
+	      upper(ctnm) like upper('%'||#{searchValue}||'%') 
+	  </if>
+     </where>
+    </select>
+
+</mapper>

@@ -43,7 +43,7 @@
 			    </ul>
 			    
 			    <ul class="detail">
-			    <li><a class="category">카테고리</a>&nbsp;</li>
+			    <li><a href="CategoryListServlet" class="category">카테고리</a>&nbsp;</li>
 			    <li><a class="option">옵션</a></li>
 			    </ul>
 			    
