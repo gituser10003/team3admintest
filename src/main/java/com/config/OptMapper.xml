@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="OptMapper">
+
+	<select id="totalCount" resultType="int" parameterType="hashmap">
+		select count(*)
+		from opt
+		<where>
+			<if test="searchName == 'ctno'">
+				upper(ctno) like upper('%'||#{searchValue}||'%')
+			</if>
+			<if test="searchName == 'optnm'">
+				upper(optnm) like upper('%'||#{searchValue}||'%')
+			</if>
+		</where>
+	</select>
+
+	<select id="selectPage" resultType="OptDTO"
+		parameterType="hashmap">
+		select optno,optnm,optprice,ctno
+		from opt
+
+		<where>
+			<if test="searchName == 'optnm'">
+				to_char(optnm) like upper ('%'||#{searchValue}||'%')
+			</if>
+			<if test="searchName == 'ctno'">
+				to_char(ctno) like upper('%'||#{searchValue}||'%')
+			</if>
+		</where>
+
+		order by optno asc
+	</select>
+	<select id="OptRetrieve" parameterType="string" resultType="OptDTO">
+		select optno,optnm,optprice,ctno
+		from opt
+		where optno=#{optno}
+	</select>
+
+	<insert id="OptAdd" parameterType="OptDTO">
+insert into opt (optno,optnm,optprice,ctno)
+            values( #{optno},#{optnm},#{optprice},#{ctno})
+</insert>
+
+<update id="OptUpdate"  parameterType="hashmap">
+update opt
+set 
+optno = #{optno},
+optnm = #{optnm},
+optprice = #{optprice},
+ctno = #{ctno}
+where optno = #{optno}
+</update>
+
+<delete id="OptDel" parameterType="String">
+delete 
+from opt
+where optno = #{optno}
+</delete>
+
+</mapper>
