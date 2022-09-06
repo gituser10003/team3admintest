@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>관리 페이지</title>
-<link href="css/Page2.css?ver=1" rel="stylesheet" type="text/css">
+<link href="css/Page2.css?ver=1.2" rel="stylesheet" type="text/css">
 <%
    String mesg = (String)session.getAttribute("select");
   SawonDTO dto = (SawonDTO)session.getAttribute("login");

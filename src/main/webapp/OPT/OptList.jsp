@@ -1,5 +1,5 @@
-<%@page import="com.dto.ProductPageDTO"%>
-<%@page import="com.dto.ProductDTO"%>
+<%@page import="com.dto.OptPageDTO"%>
+<%@page import="com.dto.OptDTO"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -17,8 +17,8 @@
 </head>
 <body>
 	<%
-	ProductPageDTO pDTO = (ProductPageDTO) request.getAttribute("pDTO");
-	List<ProductDTO> list = pDTO.getList();
+	OptPageDTO oDTO = (OptPageDTO) request.getAttribute("oDTO");
+	List<OptDTO> list = oDTO.getList();
 	String order = (String)request.getAttribute("order");
 	String searchName = (String)request.getAttribute("searchName");
 	String searchValue = (String)request.getAttribute("searchValue");
@@ -53,27 +53,27 @@
 					<tbody class="admin_boardList">
 						<!-- <th class="admin_board_head" >아이디</th> -->
 						<!-- <th class="admin_board_head">비밀번호</th> -->
-						<th class="admin_board_head" >상품번호</th>
-						<th class="admin_board_head" >상품명</th>
-						<th class="admin_board_head" >가격</th>
+						<th class="admin_board_head" >옵션번호</th>
+						<th class="admin_board_head" >옵션명</th>
+						<th class="admin_board_head" >추가금액</th>
 						<th class="admin_board_head" >물품분류</th>
 					</tbody>
 					<tbody>
 		<%
 			for (int i = 0; i < list.size(); i++) {
-				ProductDTO dto = list.get(i);
-				int pdno=dto.getPdno();
-				String pdnm=dto.getPdnm();
-				int pdprice=dto.getPdprice();
+				OptDTO dto = list.get(i);
+				int optno=dto.getOptno();
+				String optnm=dto.getOptnm();
+				int optprice=dto.getOptprice();
 				int ctno=dto.getCtno();
 			
 		%>
 	
 		<tr class="admin_board_user_vowel" >
 			
-			<td class="admin_board_user" id="pdno" name="pdno"><a href="ProductRetrieveServlet?pdno=<%=pdno%>"><%=pdno%></a></td>
-			<td class="admin_board_user" id="pdnm" name="pdnm"><%=pdnm%></td>
-			<td class="admin_board_user" id="pdprice" name="pdprice"><%=pdprice%></td>
+			<td class="admin_board_user" id="pdno" name="pdno"><a href="OptRetrieveServlet?optno=<%=optno%>"><%=optno%></a></td>
+			<td class="admin_board_user" id="pdnm" name="pdnm"><%=optnm%></td>
+			<td class="admin_board_user" id="pdprice" name="pdprice"><%=optprice%></td>
 			<td class="admin_board_user" id="ctno" name="ctno"><%=ctno%></td>
 		</tr>
 					<%
@@ -83,9 +83,9 @@
 			
 			<tr>
 			<td colspan="5">
-				<form action="ProductListServlet">
+				<form action="OptListServlet">
 					<select name="searchName">
-						<option value="pdnm">상품명</option>
+						<option value="pdnm">옵션명</option>
 						<option value="ctno">상품분류</option>
 					</select> <input type="text" name="searchValue"> <input
 						type="submit" value="검색">
@@ -98,25 +98,25 @@
             <div id="paging" class="paging">
               <br>
                 <%
-		        int curPage = pDTO.getCurPage();
-		        int perPage = pDTO.getPerPage();
-				int totalCount = pDTO.getTotalCount();
+		        int curPage = oDTO.getCurPage();
+		        int perPage = oDTO.getPerPage();
+				int totalCount = oDTO.getTotalCount();
 				int totalPage = totalCount/perPage;
 				if(totalCount%perPage!=0) totalPage++;
 		        for(int i=1; i<= totalPage; i++){
 		          	if(i== curPage){
 		          		out.print(i+"&nbsp;");
 		          	}else{
-		          		out.print("<a href='?curPage="+i+"&searchName="+searchName+"&searchValue="+searchValue+"'>"+i+"</a>&nbsp;");
+		          		out.print("<a href='OptListServlet?curPage="+i+"&searchName="+searchName+"&searchValue="+searchValue+"'>"+i+"</a>&nbsp;");
 		          	}
-		        }//end forProductListServlet
+		        }//end for
 		   %>
               <br/>&nbsp;
             </div>
         </s_paging>
 			</div><!-- end main1 -->
 		</div><!-- end header -->
-		<a href="ProductAdd.jsp" class="signup">상품생성</a>
+		<a href="OptAdd.jsp" class="signup">옵션생성</a>
 		
 		<div class="back">
 		<ul>

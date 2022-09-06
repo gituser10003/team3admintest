@@ -5,42 +5,40 @@ import java.util.HashMap;
 
 
 
-import java.util.List;
-
 import org.apache.ibatis.session.SqlSession;
 
 import com.config.MySqlSessionFactory;
-import com.dao.ProductDAO;
-import com.dto.ProductDTO;
-import com.dto.ProductPageDTO;
+import com.dao.OptDAO;
+import com.dto.OptDTO;
+import com.dto.OptPageDTO;
 
-public class ProductService {
-	
-	public ProductPageDTO select(String searchName, String searchValue, int curPage) {
+public class OptService {
+
+	public OptPageDTO select(String searchName, String searchValue, int curPage) {
 		HashMap<String, String> map = new HashMap<>();
 		map.put("searchName", searchName);
 		map.put("searchValue", searchValue);
 		
-		ProductDAO dao = new   ProductDAO();
+		OptDAO dao = new   OptDAO();
 		 SqlSession session = MySqlSessionFactory.getSession();
-		 ProductPageDTO pDTO = null;
+		 OptPageDTO oDTO = null;
 		 try {
-			 pDTO = dao.select(session,map, curPage);
+			 oDTO = dao.select(session,map, curPage);
 	    	  
 //	      }catch(Exception e) {
 //	    	  e.printStackTrace();
 	      }finally {
 			session.close();
 	      }
-	      return pDTO;
+	      return oDTO;
 		}//end select
 
-	public ProductDTO ProductRetrieve(String pdno) {
+	public OptDTO OptRetrieve(String optno) {
 		SqlSession session = MySqlSessionFactory.getSession();
-		ProductDTO dto = null;
+		OptDTO dto = null;
         try {
-            ProductDAO dao = new ProductDAO();
-            dto = dao.ProductRetrieve(session, pdno);
+            OptDAO dao = new OptDAO();
+            dto = dao.OptRetrieve(session, optno);
             session.commit();
         } finally {
             session.close();
@@ -48,25 +46,12 @@ public class ProductService {
         return dto;
 	}
 
-	public int ProductUpdate(HashMap<String, Object> map) {
+	public int OptAdd(OptDTO dto) {
 		SqlSession session = MySqlSessionFactory.getSession();
 		int n = 0;
 		try {
-			ProductDAO dao = new ProductDAO();
-			n = dao.ProductUpdate(session, map);
-			session.commit();
-		} finally {
-			session.close();
-		}
-		return n;
-	}
-
-	public int ProductAdd(ProductDTO dto) {
-		SqlSession session = MySqlSessionFactory.getSession();
-		int n = 0;
-		try {
-			ProductDAO dao = new ProductDAO();
-			n = dao.ProductAdd(session, dto);
+			OptDAO dao = new OptDAO();
+			n = dao.OptAdd(session, dto);
 			session.commit();
 		} finally {
 			session.close();
@@ -74,17 +59,30 @@ public class ProductService {
 		return n;
 	}//end 
 
-	public int ProductDel(String pdno) {
+	public int OptUpdate(HashMap<String, Object> map) {
 		SqlSession session = MySqlSessionFactory.getSession();
 		int n = 0;
 		try {
-			ProductDAO dao = new ProductDAO();
-			n = dao.ProductDel(session, pdno);
+			OptDAO dao = new OptDAO();
+			n = dao.OptUpdate(session, map);
 			session.commit();
 		} finally {
 			session.close();
 		}
 		return n;
 	}
-	
+
+	public int OptDel(String optno) {
+		SqlSession session = MySqlSessionFactory.getSession();
+		int n = 0;
+		try {
+			OptDAO dao = new OptDAO();
+			n = dao.OptDel(session, optno);
+			session.commit();
+		} finally {
+			session.close();
+		}
+		return n;
+	}
+
 }

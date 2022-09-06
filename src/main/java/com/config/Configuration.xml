@@ -9,6 +9,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
     <typeAlias type="com.dto.SawonDTO" alias="SawonDTO"/>   
     <typeAlias type="com.dto.MemberDTO" alias="MemberDTO"/>   
     <typeAlias type="com.dto.ProductDTO" alias="ProductDTO"/>   
+    <typeAlias type="com.dto.OptDTO" alias="OptDTO"/>   
     
     
     
@@ -29,6 +30,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<mapper resource="com/config/SawonMapper.xml" />
 		<mapper resource="com/config/MemberMapper.xml" />
 		<mapper resource="com/config/ProductMapper.xml" />
+		<mapper resource="com/config/OptMapper.xml" />
 		
 		
 		
