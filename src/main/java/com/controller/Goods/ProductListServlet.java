@@ -26,7 +26,7 @@ public class ProductListServlet extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String curPage = request.getParameter("curPage");//현재페이지 
+		String curPage = request.getParameter("curPage");//현재페이지  
 		if(curPage == null) curPage = "1";//시작시 현재페이지 1 
 		
 		String searchName = request.getParameter("searchName");
