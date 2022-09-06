@@ -13,7 +13,6 @@
 <a href="SawonListServlet" class="SawonM" style="color : white">사원관리</a>
 <a href="MemberListServlet" class="MemberM" style="color : white">회원관리</a>
 <a href="ProductListServlet" class="ProductM" style="color : white">상품관리</a>
-<a href="OptListServlet" class="ProductM" style="color : white">옵션관리</a>
 <%} %>
 
 

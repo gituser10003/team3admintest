@@ -38,15 +38,15 @@
 				</div>
 				<div class="ttp">
 				
-				<ul class="modify_title">
-					<li>상품 관리 리스트v1</li>
+					<ul class="modify_title">
+					<li>상품 관리 리스트</li>
 			    </ul>
 			    
-			    <ul class="detail">
-			    <li><a href="CategoryListServlet" class="category">카테고리</a>&nbsp;</li>
-			    <li><a class="option">옵션</a></li>
-			    </ul>
-			    
+			   	<ul class="detail">
+					<li><a href="ProductListServlet?" class="category">상품</a>&nbsp;</li>
+					<li><a href="CategoryListServlet?" class="option">카테고리</a></li>
+					<li><a href="OptListServlet?" class="opt">옵션</a></li>
+				</ul>
 				</div>
 
 <table class="admin_board_wrap">

@@ -1,0 +1,117 @@
+@charset "UTF-8";
+*{
+list-style: none;
+text-decoration: none;
+border-collapse: collapse;
+margin: 0px;
+padding: 0px;
+color : #000;
+}
+.intro {
+align-items: center;
+width: 1000px;
+height: 1200px;
+border: 3px solid black;
+margin: auto;
+border-radius: 2em;
+}
+
+.logo{
+display : flex;
+font-style: italic;
+font-weight: bold;
+font-size: 30px;
+width: 950px;
+height : 50px;
+justify-content: flex-end;
+}
+
+.jemog{
+align-items: center;
+display: flex;
+font-size: 60px;
+font-weight: bold;
+width: 1000px;
+height: 200px;
+margin-left: 315px;
+}
+
+
+.account{
+font-size: 20px;
+width: 1000px;
+height:100px;
+margin-left: 50px;
+}
+
+.input_text{
+text-align : center;
+width : 50%;
+font-size: 30px;
+font-weight: 200;
+line-height: 70px;
+margin-left: 50px;
+box-sizing: border-box;
+}
+
+
+#pdno{
+	margin-left: 137px;
+	height: 50px;
+} 
+#pdnm {
+	margin-left: 117px;
+	height: 50px;
+}
+
+#pdprice{
+	margin-left: 157px;
+	height: 50px;
+}
+#ctno
+ {
+	margin-left: 110px;
+	width: 16%;
+	height: 50px;
+}
+
+
+#pdfile {
+	margin-left: 110px;
+	width: 15%;
+	height: 50px;
+}
+
+.button{
+display: flex;
+width: 1000px;
+height: 100px;
+}
+.cancell{
+text-align : center;
+font-size: 40px;
+font-weight: bold;
+width: 300px;
+height: 100px;
+margin-left : 180px;
+border: 3px solid black;
+line-height: center;
+background-color: black;
+border-radius: 1em;
+color: white;
+
+}
+.check{
+text-align : center;
+font-size: 40px;
+font-weight: bold;
+width: 300px;
+height: 100px;
+margin-left : 20px;
+border: 3px solid black;
+line-height: center;
+background-color: black;
+border-radius: 1em;
+color: white;
+}
+
