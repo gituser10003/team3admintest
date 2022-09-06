@@ -38,21 +38,20 @@
 				</div>
 				<div class="ttp">
 				
-				<ul class="modify_title">
-					<li>상품 관리 리스트v1</li>
+					<ul class="modify_title">
+					<li>옵션 관리 리스트</li>
 			    </ul>
 			    
-			    <ul class="detail">
-			    <li><a class="category">카테고리</a>&nbsp;</li>
-			    <li><a class="option">옵션</a></li>
-			    </ul>
+			 		   	<ul class="detail">
+					<li><a href="ProductListServlet?" class="category">상품</a>&nbsp;</li>
+					<li><a href="CategoryListServlet?" class="option">카테고리</a></li>
+					<li><a href="OptListServlet?" class="opt">옵션</a></li>
+				</ul>
 			    
 				</div>
 
 <table class="admin_board_wrap">
 					<tbody class="admin_boardList">
-						<!-- <th class="admin_board_head" >아이디</th> -->
-						<!-- <th class="admin_board_head">비밀번호</th> -->
 						<th class="admin_board_head" >옵션번호</th>
 						<th class="admin_board_head" >옵션명</th>
 						<th class="admin_board_head" >추가금액</th>
@@ -71,9 +70,9 @@
 	
 		<tr class="admin_board_user_vowel" >
 			
-			<td class="admin_board_user" id="pdno" name="pdno"><a href="OptRetrieveServlet?optno=<%=optno%>"><%=optno%></a></td>
-			<td class="admin_board_user" id="pdnm" name="pdnm"><%=optnm%></td>
-			<td class="admin_board_user" id="pdprice" name="pdprice"><%=optprice%></td>
+			<td class="admin_board_user" id="optno" name="optno"><a href="OptRetrieveServlet?optno=<%=optno%>"><%=optno%></a></td>
+			<td class="admin_board_user" id="optnm" name="optnm"><%=optnm%></td>
+			<td class="admin_board_user" id="optprice" name="optprice"><%=optprice%></td>
 			<td class="admin_board_user" id="ctno" name="ctno"><%=ctno%></td>
 		</tr>
 					<%

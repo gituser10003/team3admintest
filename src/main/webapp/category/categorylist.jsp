@@ -24,7 +24,7 @@
    	   
    	});
 </script>
-<link href="css/Page4.css?ver=1.1" rel="stylesheet" type="text/css">
+<link href="css/ProductList.css?ver=1.1" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<div class="intro">
@@ -39,9 +39,20 @@
 					<li><a href="main.jsp">DMN COFFEE</a></li>
 				</ul>
 
-				<div class="modify_title">
-					카테고리 리스트
+				<div class="ttp">
+				
+				<ul class="modify_title">
+					<li>옵션 관리 리스트</li>
+			    </ul>
+			    
+					   	<ul class="detail">
+					<li><a href="ProductListServlet?" class="category">상품</a>&nbsp;</li>
+					<li><a href="CategoryListServlet?" class="option">카테고리</a></li>
+					<li><a href="OptListServlet?" class="opt">옵션</a></li>
+				</ul>
+			    
 				</div>
+				
 <%
 CategoryPageDTO cDTO = (CategoryPageDTO)request.getAttribute("cDTO");
 List<CategoryDTO> list = cDTO.getList();
