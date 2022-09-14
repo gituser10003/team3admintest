@@ -7,6 +7,59 @@ margin: 0px;
 padding: 0px;
 color : #000;
 }
+.signup{
+width: 140px;
+height: 40px;
+border: 3px solid black;
+border-radius: 1em;
+display : flex;
+background-color: black;
+color: white;
+font-size: 25px;
+margin-top : 95px;
+margin-left : 850px;
+justify-content: center;
+align-items: center;
+}
+
+.category{
+width: 140px;
+height: 35px;
+border: 3px solid black;
+border-radius: 1em;
+background-color: black;
+color: white;
+font-size: 25px;
+justify-content: center;
+align-items: center;
+}
+
+.option{
+width: 140px;
+height: 35px;
+border: 3px solid black;
+border-radius: 1em;
+background-color: black;
+color: white;
+font-size: 25px;
+justify-content: center;
+align-items: center;
+}
+.opt{
+width: 140px;
+height: 35px;
+border: 3px solid black;
+border-radius: 1em;
+background-color: black;
+color: white;
+font-size: 25px;
+justify-content: center;
+align-items: center;
+}
+
+.toptop{
+	display: flex;
+}
 .intro {
 align-items: center;
 width: 1000px;
@@ -14,16 +67,18 @@ height: 1200px;
 border: 3px solid black;
 margin: auto;
 border-radius: 2em;
+position:relative;
 }
-
 .logo{
 display : flex;
 font-style: italic;
 font-weight: bold;
 font-size: 30px;
 width: 950px;
-height : 50px;
+height : 170px;
 justify-content: flex-end;
+margin-right: 50px;
+margin-bottom: 100px;
 }
 
 .jemog{
@@ -32,86 +87,108 @@ display: flex;
 font-size: 60px;
 font-weight: bold;
 width: 1000px;
-height: 200px;
-margin-left: 315px;
+height:300px;
+margin-left: 100px;
 }
 
-
-.account{
-font-size: 20px;
+.id{
+font-size: 40px;
 width: 1000px;
-height:100px;
+height:250px;
 margin-left: 50px;
 }
 
 .input_text{
 text-align : center;
-width : 50%;
-font-size: 30px;
+width : 80%;
+font-size: 40px;
 font-weight: 200;
 line-height: 70px;
-margin-left: 50px;
+margin-left: 45px;
 box-sizing: border-box;
 }
-
-
-#pdno{
-	margin-left: 137px;
-	height: 50px;
-} 
-#pdnm {
-	margin-left: 117px;
-	height: 50px;
-}
-
-#pdprice{
-	margin-left: 157px;
-	height: 50px;
-}
-#ctno
- {
-	margin-left: 110px;
-	width: 16%;
-	height: 50px;
-}
-
-
-#pdfile {
-	margin-left: 110px;
-	width: 15%;
-	height: 50px;
-}
-
-.button{
-display: flex;
-width: 1000px;
-height: 100px;
-}
-.cancell{
+.login{
 text-align : center;
-font-size: 40px;
-font-weight: bold;
-width: 300px;
-height: 100px;
-margin-left : 180px;
+font-size: 60px;
+width: 500px;
+margin-left : 250px;
 border: 3px solid black;
-line-height: center;
-background-color: black;
 border-radius: 1em;
-color: white;
-
 }
-.check{
-text-align : center;
-font-size: 40px;
+.modify{
+	margin-left: 10px;
+	
+}
+.ttp{
+	display: flex;
+}
+.detail{
+	display: flex;
+	margin-left: 500px;
+	margin-top: 10px;
+}
+.modify_title
+{
+align-items: center;
+font-size: 30px;
 font-weight: bold;
-width: 300px;
-height: 100px;
-margin-left : 20px;
-border: 3px solid black;
-line-height: center;
-background-color: black;
-border-radius: 1em;
-color: white;
+height:50px;
+margin-left: 30px;
+}
+
+.title_menus{
+	display: flex;
+	margin-left: auto;
+	margin-right: 30px;
+}
+.delete{
+	margin-left: 10px;
+}
+.title_check{
+	margin-left: 10px;
+}
+
+.admin_boardList{
+	margin-left: 10px;
+}
+.admin_board_head,
+.admin_board_user {
+  font-size: 22px;
+}
+
+.admin_boardList{
+  border-bottom: 1px solid #ccc;
+  background-color: purple;
+}
+
+
+.admin_board_wrap {
+  margin: 0 auto;
+  margin-bottom: 10px;
+  border-top: 5px solid black;
+  border-bottom: 1px solid #ccc;
+  width: 1000px;
+  text-align: center;
+}
+
+.admin_board_user_vowel {
+  padding: 10px 0;
+}
+
+.paging{
+	align-items: center;
+	margin: auto;
+}
+
+.back{
+ position:absolute;
+ bottom:0;
+ margin-bottom: 20px;
+ margin-left: 10px;
+}
+
+.backimage{
+    width: 90px;
+	height: 90px;
 }
 

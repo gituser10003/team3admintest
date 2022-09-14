@@ -18,6 +18,7 @@ background-image: url('../images/Mainpage1_4.png');
 background-position: center;
 background-size: 650px;
 background-repeat: no-repeat; /* 사진 반복적이지 않게 하는것 */ 
+position:relative;
 }
 
 .logo{
@@ -85,11 +86,12 @@ width: 200px;
 }
 
 .back{
-	margin-left: 10px;
-	margin-top: 330px;
+ position:absolute;
+ bottom:0;
+ margin-bottom: 20px;
 }
 
 .backimage{
-    width: 90px;
-	height: 90px;
+ width: 90px;
+ height: 90px;
 }

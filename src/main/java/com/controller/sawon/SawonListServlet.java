@@ -39,7 +39,7 @@ public class SawonListServlet extends HttpServlet {
 		request.setAttribute("searchName", searchName);
 		request.setAttribute("searchValue", searchValue);
 		//forward
-		RequestDispatcher dis = request.getRequestDispatcher("sawonlist/Page4.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("sawonlist/sawonlist.jsp");
 		dis.forward(request, response);
 		
 	}

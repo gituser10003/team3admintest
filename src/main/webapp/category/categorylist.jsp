@@ -24,7 +24,7 @@
    	   
    	});
 </script>
-<link href="css/ProductList.css?ver=1.1" rel="stylesheet" type="text/css">
+<link href="css/ProductList.css?ver=1" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<div class="intro">
@@ -42,7 +42,7 @@
 				<div class="ttp">
 				
 				<ul class="modify_title">
-					<li>옵션 관리 리스트</li>
+					<li>카테고리 리스트</li>
 			    </ul>
 			    
 					   	<ul class="detail">

@@ -1,5 +1,12 @@
 @charset "UTF-8";
-
+*{
+list-style: none;
+text-decoration: none;
+border-collapse: collapse;
+margin: 0px;
+padding: 0px;
+color : #000;
+}
 .signup{
 width: 140px;
 height: 40px;
@@ -50,14 +57,6 @@ justify-content: center;
 align-items: center;
 }
 
-*{
-list-style: none;
-text-decoration: none;
-border-collapse: collapse;
-margin: 0px;
-padding: 0px;
-color : #000;
-}
 .toptop{
 	display: flex;
 }
@@ -68,6 +67,7 @@ height: 1200px;
 border: 3px solid black;
 margin: auto;
 border-radius: 2em;
+position:relative;
 }
 .logo{
 display : flex;
@@ -181,8 +181,10 @@ margin-left: 30px;
 }
 
 .back{
-	margin-left: 10px;
-	margin-top: 375px;
+ position:absolute;
+ bottom:0;
+ margin-bottom: 20px;
+ margin-left: 10px;
 }
 
 .backimage{
