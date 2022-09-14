@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<link href="css/ProductAdd.css?ver=1.0" rel="stylesheet" type="text/css">
+<link href="css/OptAdd.css?ver=1.0" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function () {
@@ -53,6 +53,8 @@ $(document).ready(function () {
    </ul>
    
 <!--    <div class="account">
+      <table class="table">
+   
    옵션번호<input type="text" class="input_text" id="optno" name="optno">
    <span id="result"></span>
    </div> -->
@@ -78,14 +80,16 @@ $(document).ready(function () {
    
   <div class="button">
   
-  <div>
+   <div>
    <input class="cancell" type="button" onclick="location.href='OptListServlet'" value="취소">
    </div>
+   
    <div>
    <input class="check" type="submit" value="옵션생성" id="upload"> 
    </div>
+   
    </div> 
    
-</div>
+</div><!-- end intro -->
 
 </form>

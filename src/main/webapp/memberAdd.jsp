@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<link href="css/memberAdd.css?ver=1.1" rel="stylesheet" type="text/css">
+<link href="css/memberAdd.css?ver=1" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function () {
@@ -30,14 +30,8 @@ $(document).ready(function () {
    </ul>
    
    <ul class="jemog">
-    <li>회원 생성</li>
+    <li>회원 등록</li>
    </ul>
-   
-   <div class="account">
-   
-<!--    회원번호<input type="text" class="input_text" id="memno" name="memno">
-   <span id="result"></span>
-   </div> -->
    
    <div class="account">
    핸드폰번호
@@ -57,15 +51,23 @@ $(document).ready(function () {
    </div>
    
   
-  <div class="button">
+  
+  	
+  	
+  	
+  	
+  	<div class="button">
   
    <div>
-   <input class="cancell" type="reset" value="취소">
+   <input class="cancell" type="reset" onclick="location.href='MemberListServlet'" value="취소">
    </div>
+   
    <div>
    <input class="check" type="submit" value="회원등록">
    </div>
-   </div> 
-</div>
+   
+   	</div> <!-- end buttion --> 
+   	
+</div><!-- end intro -->
 
 </form>

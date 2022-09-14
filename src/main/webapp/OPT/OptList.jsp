@@ -12,7 +12,7 @@
 <script type="text/javascript">
 
 </script>
-<link href="css/ProductList.css?ver=1.1" rel="stylesheet" type="text/css">
+<link href="css/OptList.css?ver=1.1" rel="stylesheet" type="text/css">
 
 </head>
 <body>
@@ -39,7 +39,7 @@
 				<div class="ttp">
 				
 					<ul class="modify_title">
-					<li>옵션 관리 리스트</li>
+					<li>옵션 리스트</li>
 			    </ul>
 			    
 			 		   	<ul class="detail">

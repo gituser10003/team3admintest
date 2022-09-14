@@ -4,7 +4,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-<link href="css/categoryedit.css?ver=1.1" rel="stylesheet" type="text/css">
+<link href="css/categoryedit.css?ver=1" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
 
@@ -49,32 +49,45 @@ String ctnm = dto.getCtnm();
    </ul>
    
    <ul class="jemog">
-    <li>회원 수정 페이지</li>
+    <li>카테고리 수정 페이지</li>
    </ul>
    
-   <div class="account">
-   카테고리번호<input type="text" class="input_text" id="ctno" name="ctno" value="<%=ctno%>">
-   </div>
+   <table class="table">
    
-  <div class="account">
-  카테고리이름<input type="text" class="input_text" id="ctnm" name="ctnm" value="<%=ctnm%>">
-  </div>
+	<tr>
+	<th class="name">카테고리번호</th>
+	<th><input type="text" class="input_text" id="ctno" name="ctno" value="<%=ctno%>"></th>
+	</tr>
+	
+	<tr>
+	<th class="name">카테고리이름</th>
+	<th><input type="text" class="input_text" id="ctnm" name="ctnm" value="<%=ctnm%>"></th>
+	</tr>
+
+</table>
+  <div class="bottom1">
   
   <div class="button">
   
    <div>
-   <input class="cancell" type="reset" value="취소">
+   	<input class="cancell" type="reset" onclick="location.href='CategoryListServlet'" value="취소">
    </div>
+   
    <div>
-   <input onclick="return confirm('정말로 수정하시겠습니까?')" class="check" type="submit" value="수정">
+   	<input onclick="return confirm('정말로 수정하시겠습니까?')" class="check" type="submit" value="수정">
    </div>
    
    </div>
+   
+   <div>
+   	<input onclick="return confirm('정말로 삭제하시겠습니까?')" type="button" class="del"  value="삭제" id="xx<%=ctno %>" data-id="<%=ctno%>" />
+   </div> 
+   
+   </div>
+   
    </form>
    
-     <div>
-     <input onclick="return confirm('정말로 삭제하시겠습니까?')" type="button" class="del"  value="삭제" id="xx<%=ctno %>" data-id="<%=ctno%>" />
-     </div> 
+   
 
 
 </div>
