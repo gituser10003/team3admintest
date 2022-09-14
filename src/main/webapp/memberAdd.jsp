@@ -35,10 +35,10 @@ $(document).ready(function () {
    
    <table class="table">
    
-	<tr>
+<!-- 	<tr>
 		<th class="name">회원번호</th>
 		<th><input type="text" class="input_text" id="memno" name="memno"></th>
-	</tr>
+	</tr> -->
 	
 	<tr>
 		<th class="name">핸드폰번호</th>
