@@ -27,21 +27,9 @@ import com.service.ProductService;
 /**
  * Servlet implementation class ProductUploadServlet
  */
-@WebServlet("/ProductUploadServlet")
-public class ProductUploadServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+@WebServlet("/ProductAddUploadServlet")
+public class ProductAddUploadServlet extends HttpServlet {
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ProductUploadServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//multipart 여부 검사
 				request.setCharacterEncoding("UTF-8");
@@ -74,7 +62,6 @@ public class ProductUploadServlet extends HttpServlet {
 						List<FileItem> items= upload.parseRequest(request);
 						
 						Iterator<FileItem> iter= items.iterator();
-						String pdno=null;
 						String pdnm=null;
 						String pdprice=null;
 						String ctno=null;
@@ -83,9 +70,6 @@ public class ProductUploadServlet extends HttpServlet {
 							if(item.isFormField()) {
 								//type="file"이 아닌 것의 처리
 								String name = item.getFieldName();
-								if (name.equals("pdno")) {
-									pdno = item.getString("utf-8");
-								}
 								if (name.equals("pdnm")) {
 									pdnm = item.getString("utf-8");
 								}
@@ -120,11 +104,9 @@ public class ProductUploadServlet extends HttpServlet {
 						}//end else
 					}//end while
 						ProductDTO dto=new ProductDTO();
-						dto.setPdno(Integer.parseInt(pdno));
 						dto.setPdnm(pdnm);
 						dto.setPdprice(Integer.parseInt(pdprice));
 						dto.setCtno(Integer.parseInt(ctno));
-						System.out.println(pdno);
 						System.out.println(pdnm);
 						System.out.println(pdprice);
 						System.out.println(ctno);

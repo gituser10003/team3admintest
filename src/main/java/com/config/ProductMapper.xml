@@ -50,7 +50,7 @@ where pdno = #{pdno}
 
 <insert id="ProductAdd" parameterType="ProductDTO">
 insert into product (pdno,pdnm,pdprice,ctno)
-            values( #{pdno},#{pdnm},#{pdprice},#{ctno})
+            values((select nvl(max(pdno),0)+1 from product),#{pdnm},#{pdprice},#{ctno})
 </insert>
 
 <delete id="ProductDel" parameterType="String">

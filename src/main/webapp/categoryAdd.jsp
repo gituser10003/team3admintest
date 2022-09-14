@@ -33,25 +33,27 @@ $(document).ready(function () {
     <li>카테고리 생성</li>
    </ul>
    
-   <div class="account">
-   카테고리 번호<input type="text" class="input_text" id="ctno" name="ctno">
-   <span id="result"></span>
-   </div>
+      <table class="table">
    
-   <div class="account">
-   카테고리 이름
-   <input type="text" class="input_text" id="ctnm" name="ctnm">
-   </div>
-  
+	<tr>
+	<th class="name">카테고리이름</th>
+	<th><input type="text" class="input_text" id="ctnm" name="ctnm"></th>
+	</tr>
+
+</table>
+
   <div class="button">
   
    <div>
-   <input class="cancell" type="reset" value="취소">
+   <input class="cancell" type="reset" onclick="location.href='CategoryListServlet'" value="취소">
    </div>
+   
    <div>
-   <input class="check" type="submit" value="카테고리등록">
+   <input class="check" type="submit" value="등록">
    </div>
+   
    </div> 
-</div>
+   
+</div><!-- end intro -->
 
 </form>

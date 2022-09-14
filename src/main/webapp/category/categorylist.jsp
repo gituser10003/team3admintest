@@ -42,7 +42,7 @@
 				<div class="ttp">
 				
 				<ul class="modify_title">
-					<li>옵션 관리 리스트</li>
+					<li>카테고리 리스트</li>
 			    </ul>
 			    
 					   	<ul class="detail">
@@ -130,6 +130,6 @@ String searchValue = (String)request.getAttribute("searchValue");
 		<li><a href="ProductListServlet"><img class="backimage" src="images/back.png"></a></li>
 		</ul>
 	</div><!-- end intro -->
-	
+	</div>
 </body>
 </html>

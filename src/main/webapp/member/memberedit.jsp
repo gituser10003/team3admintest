@@ -3,7 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-<link href="css/memberedit.css?ver=1.1" rel="stylesheet" type="text/css">
+<link href="css/memberedit.css?ver=1" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
 
@@ -54,44 +54,55 @@ int mempoint = dto.getMempoint();
     <li>회원 수정 페이지</li>
    </ul>
    
-   <div class="account">
-   회원번호<input type="text" class="input_text" id="memno" name="memno" value="<%=memno%>">
-   </div>
+   <table class="table">
    
-    <div class="account">
-   핸드폰번호
-   <select class="input_text" id="phone1" name="phone1">
-   <option value="010" <% if("010".equals(phone1)){ %> selected<%} %>>010</option>
-   <option value="011" <% if("011".equals(phone1)){ %> selected<%} %>>011</option>
-   <option value="012" <% if("012".equals(phone1)){ %> selected<%} %>>012</option>
-   <option value="070" <% if("070".equals(phone1)){ %> selected<%} %>>070</option>
-   </select>&nbsp;-
-   <input type="text" class="input_text" id="phone2" name="phone2" value="<%=phone2%>">&nbsp;-
-   <input type="text" class="input_text" id="phone3" name="phone3" value="<%=phone3%>">
-   </div>
-   
-  <div class="account">
-  포인트
-  <input type="text" class="input_text" id="mempoint" name="mempoint" value="<%=mempoint%>">
-  </div>
+	<tr>
+		<th class="name">회원번호</th>
+		<th><input type="text" class="input_text" id="memno" name="memno" value="<%=memno%>"></th>
+	</tr>
+	
+	<tr>
+		<th class="name">핸드폰번호</th>
+		<th><select class="input_text" id="phone1" name="phone1">
+  	 	<option value="010" <% if("010".equals(phone1)){ %> selected<%} %>>010</option>
+ 		 <option value="011" <% if("011".equals(phone1)){ %> selected<%} %>>011</option>
+   		<option value="012" <% if("012".equals(phone1)){ %> selected<%} %>>012</option>
+   		<option value="070" <% if("070".equals(phone1)){ %> selected<%} %>>070</option>
+   		</select>&nbsp;-
+   		<input type="text" class="input_text" id="phone2" name="phone2" value="<%=phone2%>">&nbsp;-
+   		<input type="text" class="input_text" id="phone3" name="phone3" value="<%=phone3%>"></th>
+	</tr>
+	
+	<tr>
+		<th class="name">포인트</th>
+		<th><input type="text" class="input_text" id="mempoint" name="mempoint" value="<%=mempoint%>"></th>
+	</tr>
+
+</table>
+  
+  <div class="bottom1">
   
   <div class="button">
   
    <div>
-   <input class="cancell" type="reset" value="취소">
+   <input class="cancell" type="reset" onclick="location.href='MemberListServlet'" value="취소">
    </div>
+   
    <div>
    <input onclick="return confirm('정말로 수정하시겠습니까?')" class="check" type="submit" value="수정">
    </div>
    
    </div>
-   </form>
    
-     <div>
+    <div>
      <input onclick="return confirm('정말로 삭제하시겠습니까?')" type="button" class="del"  value="삭제" id="xx<%=memno %>" data-id="<%=memno%>" />
      </div> 
-
-
+     
+     </div>
+     
+   </form>
+   
+   
 </div>
 
 

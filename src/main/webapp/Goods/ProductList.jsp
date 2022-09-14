@@ -39,7 +39,7 @@
 				<div class="ttp">
 				
 					<ul class="modify_title">
-					<li>상품 관리 리스트</li>
+					<li>상품 리스트</li>
 			    </ul>
 			    
 			   	<ul class="detail">

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<link href="css/ProductAdd.css?ver=1.0" rel="stylesheet" type="text/css">
+<link href="css/ProductAdd.css?ver=1.1" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function () {
@@ -41,7 +41,7 @@ $(document).ready(function () {
 })//end document
 
 </script>
-<form action="ProductUploadServlet" method="post" id="uploadfile" enctype="multipart/form-data">
+<form action="ProductAddUploadServlet" method="post" id="uploadfile" enctype="multipart/form-data">
 <div class="intro">
  
    <ul class="logo">
@@ -49,24 +49,25 @@ $(document).ready(function () {
    </ul>
    
    <ul class="jemog">
-    <li>품목 생성</li>
+   
+    <li>상품 생성</li>
    </ul>
-   
-   <div class="account">
-   
-   상품번호<input type="text" class="input_text" id="pdno" name="pdno">
-   <span id="result"></span>
-   </div>
-   <div class="account">
-   상품명<input type="text" class="input_text" id="pdnm" name="pdnm">
-   </div>
-   <div class="account">
-   상품가격<input type="text" class="input_text" id="pdprice" name="pdprice">
-   </div>
-   
-    <div class="account">
-   상품넘버
-   <select class="input_text" id="ctno" name="ctno">
+   <table class="table">
+<tr>
+
+<tr>
+<th class="name">상품명</th>
+<th><input type="text" class="input_text" id="pdnm" name="pdnm"></th>
+</tr>
+
+<tr>
+<th class="name">상품금액</th>
+<th><input type="text" class="input_text" id="pdprice" name="pdprice"></th>
+</tr>
+
+<tr>
+<th class="name">분류번호</th>
+   <th><select class="input_text" id="ctno" name="ctno">
    <option value="01">01</option>
    <option value="02">02</option>
    <option value="03">02</option>
@@ -74,21 +75,26 @@ $(document).ready(function () {
    <option value="04">04</option>
    <option value="05">05</option>
    <option value="06">06</option>
-   </select>&nbsp;
-   </div>
-   
-<div  class="account" >
-상품 이미지: &nbsp;&nbsp;&nbsp; <input class="input_text" type="file" name="theFile"><br/>
- </div> 
-  
+   </select>&nbsp;</th>
+</tr>
+
+<tr>
+<th class="name">상품 이미지</th>
+<th><input class="file" type="file" name="theFile"></th>
+</tr>
+
+</table>
+
   <div class="button">
   
-  <div>
+   <div>
    <input class="cancell" type="button" onclick="location.href='ProductListServlet'" value="취소">
    </div>
+   
    <div>
    <input class="check" type="submit" value="상품생성" id="upload"> 
    </div>
+   
    </div> 
    
 </div>
