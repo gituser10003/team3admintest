@@ -55,7 +55,7 @@
 						<th class="admin_board_head" >옵션번호</th>
 						<th class="admin_board_head" >옵션명</th>
 						<th class="admin_board_head" >추가금액</th>
-						<th class="admin_board_head" >물품분류</th>
+						<th class="admin_board_head" >분류번호</th>
 					</tbody>
 					<tbody>
 		<%

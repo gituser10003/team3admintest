@@ -41,7 +41,7 @@ $(document).ready(function () {
 })//end document
 
 </script>
-<form action="ProductUploadServlet" method="post" id="uploadfile" enctype="multipart/form-data">
+<form action="ProductAddUploadServlet" method="post" id="uploadfile" enctype="multipart/form-data">
 <div class="intro">
  
    <ul class="logo">
@@ -54,10 +54,6 @@ $(document).ready(function () {
    </ul>
    <table class="table">
 <tr>
-<th class="name">상품번호</th>
-	<th><div><input type="text" class="input_text" id="pdno" name="pdno"></div>
-	<span id="result"></span></th>
-</tr>
 
 <tr>
 <th class="name">상품명</th>

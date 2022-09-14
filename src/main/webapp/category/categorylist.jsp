@@ -24,7 +24,7 @@
    	   
    	});
 </script>
-<link href="css/ProductList.css?ver=1" rel="stylesheet" type="text/css">
+<link href="css/ProductList.css?ver=1.1" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<div class="intro">
@@ -130,6 +130,6 @@ String searchValue = (String)request.getAttribute("searchValue");
 		<li><a href="ProductListServlet"><img class="backimage" src="images/back.png"></a></li>
 		</ul>
 	</div><!-- end intro -->
-	
+	</div>
 </body>
 </html>

@@ -55,12 +55,6 @@ $(document).ready(function () {
       <table class="table">
    
 	<tr>
-	<th class="name">옵션번호</th>
-	<th><div><input type="text" class="input_text" id="optno" name="optno"></div>
-		     <span id="result"></span></th>
-	</tr>
-	
-	<tr>
 	<th class="name">옵션명</th>
 	<th><input type="text" class="input_text" id="optnm" name="optnm"></th>
 	</tr>
