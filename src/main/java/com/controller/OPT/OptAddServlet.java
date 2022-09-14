@@ -37,16 +37,13 @@ public class OptAddServlet extends HttpServlet {
 	      SawonDTO sdto = (SawonDTO)session.getAttribute("login");
 		 String nextPage = null;
 	      if(sdto!=null) {//회원인경우 
-		String optno=request.getParameter("optno");
+		//String optno=request.getParameter("optno");
 		String optnm=request.getParameter("optnm");
 		String optprice=request.getParameter("optprice");
 		String ctno=request.getParameter("ctno");
 		OptDTO dto=new OptDTO();
-		System.out.println(optno);
-		System.out.println(optnm);
-		System.out.println(optprice);
-		System.out.println(ctno);
-		dto.setOptno(Integer.parseInt(optno));
+		System.out.println("옵션 등록");
+		//dto.setOptno(Integer.parseInt(optno));
 		dto.setOptnm(optnm);
 		dto.setOptprice(Integer.parseInt(optprice));
 		dto.setCtno(Integer.parseInt(ctno));

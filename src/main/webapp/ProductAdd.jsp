@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<link href="css/ProductAdd.css?ver=1.0" rel="stylesheet" type="text/css">
+<link href="css/ProductListModify.css?ver=1" rel="stylesheet" type="text/css">
+<!-- <link href="css/ProductAdd.css?ver=1.0" rel="stylesheet" type="text/css"> -->
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function () {
 	//form 서브밋
-	$("form").on("submit", function (event) {
+/* 	$("form").on("submit", function (event) {
 		var userid = $("#pdno").val();
 		var passwd = $("#pdnm").val();
 		if (userid.length==0) {
@@ -17,7 +18,7 @@ $(document).ready(function () {
 			$("#pdnm").focus();
 			event.preventDefault();
 		}
-	});
+	}); */
 
 	$("#userid").on("keyup",function(event){	
 		 $.ajax({
@@ -41,7 +42,7 @@ $(document).ready(function () {
 })//end document
 
 </script>
-<form action="ProductUploadServlet" method="post" id="uploadfile" enctype="multipart/form-data">
+<!-- <form action="ProductUploadServlet" method="post" id="uploadfile" enctype="multipart/form-data">
 <div class="intro">
  
    <ul class="logo">
@@ -93,4 +94,77 @@ $(document).ready(function () {
    
 </div>
 
-</form>
+</form> -->
+
+
+<div class="intro">
+<form action="ProductUploadServlet" method="post" id="uploadfile" enctype="multipart/form-data">
+   <ul class="logo">
+    <li><a href="Mainpage1.jsp">DMN COFFEE</a></li>
+   </ul>
+   
+   <div class="jemog">
+    상품 생성 페이지
+   </div>
+   
+<table class="table">
+<!-- <tr>
+<th class="name">상품번호</th>
+<th><input type="text" class="input_text" id="pdno" name="pdno"></th>
+</tr> -->
+
+<tr>
+<th class="name">상품명</th>
+<th><input type="text" class="input_text" id="pdnm" name="pdnm"></th>
+</tr>
+
+<tr>
+<th class="name">상품금액</th>
+<th><input type="text" class="input_text" id="pdprice" name="pdprice"></th>
+</tr>
+
+<tr>
+<th class="name">상품넘버</th>
+<th>
+<div class="name">
+   <select class="input_text" id="ctno" name="ctno">
+   <option value="01">01</option>
+   <option value="02">02</option>
+   <option value="03">02</option>
+   <option value="04">04</option>
+   <option value="04">04</option>
+   <option value="05">05</option>
+   <option value="06">06</option>
+   </select>&nbsp;
+   </div></th>
+</tr>
+
+<tr>
+<th class="name">상품 이미지</th>
+<th><input class="file" type="file" name="theFile"></th>
+</tr>
+
+</table>
+
+	<div class="bottom1">
+	
+    <div class="button">
+  
+   <div>
+   <input class="cancell" type="button" onclick="location.href='ProductListServlet'" value="취소">
+   </div>
+   
+   <div>
+   <input class="check" type="submit" value="상품생성" id="upload"> 
+   </div>
+   
+   </div>
+   
+     
+   </div>
+     
+    
+   </form>
+   
+     
+ </div>

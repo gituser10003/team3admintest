@@ -25,7 +25,7 @@ public class MemberListServlet extends HttpServlet {
 
 		String searchName = request.getParameter("searchName");
 		String searchValue = request.getParameter("searchValue");
-		System.out.println(searchName+"\t"+searchValue);
+		System.out.println("멤버 리스트 불러옴"+searchName+"\t"+searchValue);
 		MemberService service = new MemberService();
 		MemberPageDTO mDTO = service.select(searchName, searchValue, Integer.parseInt(curPage));
 		request.setAttribute("mDTO", mDTO);

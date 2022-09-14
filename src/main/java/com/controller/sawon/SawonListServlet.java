@@ -31,7 +31,7 @@ public class SawonListServlet extends HttpServlet {
 		
 		String searchName = request.getParameter("searchName");
 		String searchValue = request.getParameter("searchValue");
-		System.out.println(searchName+"\t"+searchValue);
+		System.out.println("사원 리스트 불러옴"+searchName+"\t"+searchValue);
 		SawonService service = new SawonService();
 		SawonPageDTO pDTO = service.select(searchName, searchValue, Integer.parseInt(curPage));
 		

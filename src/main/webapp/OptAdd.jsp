@@ -52,11 +52,10 @@ $(document).ready(function () {
     <li>옵션 생성</li>
    </ul>
    
-   <div class="account">
-   
+<!--    <div class="account">
    옵션번호<input type="text" class="input_text" id="optno" name="optno">
    <span id="result"></span>
-   </div>
+   </div> -->
    <div class="account">
    옵션명<input type="text" class="input_text" id="optnm" name="optnm">
    </div>

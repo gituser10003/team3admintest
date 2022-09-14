@@ -23,11 +23,11 @@ public class CategoryAddServlet extends HttpServlet {
 		SawonDTO sdto = (SawonDTO)session.getAttribute("login");
 		String nextPage = null;
 		if (sdto!=null) {
-			String ctno = request.getParameter("ctno");
+			//String ctno = request.getParameter("ctno");
 			String ctnm = request.getParameter("ctnm");
 			
 			CategoryDTO dto = new CategoryDTO();
-			dto.setCtno(Integer.parseInt(ctno));
+			//dto.setCtno(Integer.parseInt(ctno));
 			dto.setCtnm(ctnm);
 			
 			CategoryService service = new CategoryService();

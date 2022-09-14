@@ -35,9 +35,9 @@ $(document).ready(function () {
    
    <div class="account">
    
-   회원번호<input type="text" class="input_text" id="memno" name="memno">
+<!--    회원번호<input type="text" class="input_text" id="memno" name="memno">
    <span id="result"></span>
-   </div>
+   </div> -->
    
    <div class="account">
    핸드폰번호

@@ -74,7 +74,7 @@ public class ProductUploadServlet extends HttpServlet {
 						List<FileItem> items= upload.parseRequest(request);
 						
 						Iterator<FileItem> iter= items.iterator();
-						String pdno=null;
+						//String pdno=null;
 						String pdnm=null;
 						String pdprice=null;
 						String ctno=null;
@@ -83,9 +83,9 @@ public class ProductUploadServlet extends HttpServlet {
 							if(item.isFormField()) {
 								//type="file"이 아닌 것의 처리
 								String name = item.getFieldName();
-								if (name.equals("pdno")) {
-									pdno = item.getString("utf-8");
-								}
+//								if (name.equals("pdno")) {
+//									pdno = item.getString("utf-8");
+//								}
 								if (name.equals("pdnm")) {
 									pdnm = item.getString("utf-8");
 								}
@@ -120,11 +120,11 @@ public class ProductUploadServlet extends HttpServlet {
 						}//end else
 					}//end while
 						ProductDTO dto=new ProductDTO();
-						dto.setPdno(Integer.parseInt(pdno));
+						//dto.setPdno(Integer.parseInt(pdno));
 						dto.setPdnm(pdnm);
 						dto.setPdprice(Integer.parseInt(pdprice));
 						dto.setCtno(Integer.parseInt(ctno));
-						System.out.println(pdno);
+						//System.out.println(pdno);
 						System.out.println(pdnm);
 						System.out.println(pdprice);
 						System.out.println(ctno);

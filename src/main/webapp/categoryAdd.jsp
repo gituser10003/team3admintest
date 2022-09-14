@@ -33,10 +33,10 @@ $(document).ready(function () {
     <li>카테고리 생성</li>
    </ul>
    
-   <div class="account">
+<!--    <div class="account">
    카테고리 번호<input type="text" class="input_text" id="ctno" name="ctno">
    <span id="result"></span>
-   </div>
+   </div> -->
    
    <div class="account">
    카테고리 이름
