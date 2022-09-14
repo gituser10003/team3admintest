@@ -63,7 +63,11 @@ where memno = #{memno}
 
 <insert id="memberAdd" parameterType="MemberDTO">
 insert into member (memno,phone1,phone2,phone3,mempoint)
+<<<<<<< HEAD
                   values((select nvl(max(memno),0)+1 from member),#{phone1},#{phone2},#{phone3},#{mempoint})
+=======
+                  values((select nvl(max(memno),0)+1 from member),#{phone1},#{phone2},#{phone3},#{mempoint}) 
+>>>>>>> branch 'hotfix2' of https://github.com/gituser10003/team3admintest.git
 </insert>
 
 </mapper>

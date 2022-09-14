@@ -21,14 +21,22 @@ public class MemberAddServlet extends HttpServlet {
 		SawonDTO sdto = (SawonDTO)session.getAttribute("login");
 		String nextPage = null;
 		if (sdto!=null) {
+<<<<<<< HEAD
 			//String memno = request.getParameter("memno");
+=======
+//			String memno = request.getParameter("memno");
+>>>>>>> branch 'hotfix2' of https://github.com/gituser10003/team3admintest.git
 			String phone1 = request.getParameter("phone1");
 			String phone2 = request.getParameter("phone2");
 			String phone3 = request.getParameter("phone3");
 			String mempoint = request.getParameter("mempoint");
 			System.out.println("멤버 등록 실행");
 			MemberDTO dto = new MemberDTO();
+<<<<<<< HEAD
 			//dto.setMemno(Integer.parseInt(memno));
+=======
+//			dto.setMemno(Integer.parseInt(memno));
+>>>>>>> branch 'hotfix2' of https://github.com/gituser10003/team3admintest.git
 			dto.setPhone1(phone1);
 			dto.setPhone2(phone2);
 			dto.setPhone3(phone3);
