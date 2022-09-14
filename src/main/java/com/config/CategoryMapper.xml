@@ -31,7 +31,7 @@ where ctno = #{ctno}
 
 <insert id="categoryAdd" parameterType="CategoryDTO">
 insert into category (ctno,ctnm)
-               values(#{ctno},#{ctnm})
+               values((select nvl(max(ctno),0)+1 from category),#{ctnm})
 </insert>
 
 	<select id="selectPage" resultType="CategoryDTO" parameterType="hashmap">

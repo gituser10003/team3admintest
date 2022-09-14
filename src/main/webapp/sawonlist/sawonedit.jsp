@@ -3,7 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-<link href="css/Page5.css?ver=1.1" rel="stylesheet" type="text/css">
+<link href="css/sawonedit.css?ver=1.1" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
 
@@ -325,7 +325,7 @@ String sawongrade = dto.getSawongrade();
   <div class="button">
   
    <div>
-   <input class="cancell" type="reset" value="취소">
+   <input class="cancell" type="reset" onclick="location.href='SawonListServlet'" value="취소">
    </div>
    <div>
    <input onclick="return confirm('정말로 수정하시겠습니까?')" class="check" type="submit" value="확인">

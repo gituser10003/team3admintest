@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-<link href="css/Page3.css?ver=1.0" rel="stylesheet" type="text/css">
+<link href="css/Page3.css?ver=1.1" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
 
@@ -66,38 +66,42 @@ $("#userid").on("keyup",function(event){
    <ul class="jemog">
     <li>관리자 회원가입</li>
    </ul>
-   
-   <div class="account">
-   
-   아이디<input type="text" class="input_text" id="userid" name="userid">
-   <span id="result"></span>
-   </div>
-   <div class="account">
-   비밀번호<input type="password" class="input_text" id="passwd" name="passwd">
-   </div>
-    <div class="account">
-   비밀번호 재확인<input type="password" class="input_text" id="passwd2" name="passwd2">
-   <span id="result2"></span>
-   </div>
-   <div class="account">
-   이름<input type="text" class="input_text" id="username" name="username">
-   </div>
-   
-    <div class="account">
-   전화번호
-   <select class="input_text" id="phonenumber1" name="phonenumber1">
-   <option value="010">010</option>
-   <option value="011">011</option>
-   <option value="012">012</option>
-   <option value="070">070</option>
-   </select>&nbsp;-
-   <input type="text" class="input_text" id="phonenumber2" name="phonenumber2">&nbsp;-
-   <input type="text" class="input_text" id="phonenumber3" name="phonenumber3">
-   </div>
-   
-   <div class="account">
-   생년월일
-   <select class="input_text" id="birthday1" name="birthday1">
+	<table class="table">
+	
+		<tr>
+			<th class="name">아이디</th>
+			<th><div><input type="text" class="input_text" id="userid" name="userid"></div><span id="result"></span></th>
+	    </tr>
+	    
+	    <tr>
+			<th class="name">비밀번호</th>
+			<th><input type="password" class="input_text" id="passwd" name="passwd"></th>
+	    </tr>
+	    
+	    <tr>
+			<th class="name">비밀번호 재확인</th>
+			<th><div><input type="password" class="input_text" id="passwd2" name="passwd2"></div><span id="result2"></span></th>
+	    </tr>
+	    
+	    <tr>
+			<th class="name">이름</th>
+			<th><input type="text" class="input_text" id="username" name="username"></th>
+	    </tr>
+	    
+	    <tr>
+			<th class="name">전화번호</th>
+			<th>   <select class="input_text" id="phonenumber1" name="phonenumber1">
+   			<option value="010">010</option>
+   			<option value="011">011</option>
+   			<option value="012">012</option>
+   			<option value="070">070</option>
+   			</select>&nbsp;-
+   			<input type="text" class="input_text" id="phonenumber2" name="phonenumber2">&nbsp;-
+   			<input type="text" class="input_text" id="phonenumber3" name="phonenumber3"></th>
+	    </tr>
+	    <tr>
+			<th class="name">생년월일</th>
+			<th><select class="input_text" id="birthday1" name="birthday1">
 <option value="1900">1900</option>
 <option value="1901">1901</option>
 <option value="1902">1902</option>
@@ -221,7 +225,7 @@ $("#userid").on("keyup",function(event){
 <option value="2020">2020</option>
 <option value="2021">2021</option>
 <option value="2022">2022</option>
-   </select>년
+   </select>&nbsp;년
    
    <select class="input_text" id="birthday2" name="birthday2">
 <option value="1">1</option>
@@ -236,7 +240,7 @@ $("#userid").on("keyup",function(event){
 <option value="10">10</option>
 <option value="11">11</option>
 <option value="12">12</option>
-   </select>월
+   </select>&nbsp;월
    
    <select class="input_text" id="birthday3" name="birthday3">
    <option value="1">1</option>
@@ -270,37 +274,41 @@ $("#userid").on("keyup",function(event){
 <option value="29">29</option>
 <option value="30">30</option>
 <option value="31">31</option>
-   </select>일
-
-  </div>
+   </select>&nbsp;일</th>
+	    </tr>
+	    
+	      <tr>
+			<th class="name">이메일</th>
+			<th><input type="text" class="input_text" id="email1" name="email1">@
+   			<input type="text" class="input_text" id="email2" name="email2" placeholder="직접입력">
+   			<select id="selectemail">
+  			<option value="naver.com">naver.com</option>
+   			<option value="daum.net">daum.net</option>
+   			<option value="gmail.com">gmail.com</option>
+   			</select></th>
+	    </tr>
+	    
+	      <tr>
+			<th class="name">직위</th>
+			<th>  <select class="input_text" name="sawongrade" id="sawongrade">
+  			<option value="Worker">Worker</option>
+ 			</select></th>
+	    </tr>
+	    
+</table>
   
-  <div class="account">
-   이메일<input type="text" class="input_text" id="email1" name="email1">@
-   <input type="text" class="input_text" id="email2" name="email2" placeholder="직접입력">
-   <select id="selectemail">
-   <option value="naver.com">naver.com</option>
-   <option value="daum.net">daum.net</option>
-   <option value="gmail.com">gmail.com</option>
-   </select>
-   </div>
-  
-  <div class="account">
-  직위
-  <select class="input_text" name="sawongrade" id="sawongrade">
-  <option value="Worker">Worker</option>
-  </select>
-  
-  </div>
-  
-  <div class="button">
+    <div class="button">
   
    <div>
    <input class="cancell" onclick="location.href='main.jsp'" value="취소">
    </div>
+   
    <div>
    <input class="check" type="submit" value="회원가입">
    </div>
+   
    </div> 
-</div>
+   
+</div><!-- end intro -->
 
 </form>

@@ -41,7 +41,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<insert id="OptAdd" parameterType="OptDTO">
 insert into opt (optno,optnm,optprice,ctno)
-            values( #{optno},#{optnm},#{optprice},#{ctno})
+            values((select nvl(max(optno),0)+1 from opt),#{optnm},#{optprice},#{ctno})
 </insert>
 
 <update id="OptUpdate"  parameterType="hashmap">

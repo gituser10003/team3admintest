@@ -18,6 +18,8 @@
 session.removeAttribute("sawonAdd");
    } 
 %>
+
+
 <jsp:include page="Mainpage1.jsp" flush="true"></jsp:include><br>
 </body>
 </html>

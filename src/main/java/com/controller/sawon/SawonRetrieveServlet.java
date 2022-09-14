@@ -30,7 +30,7 @@ public class SawonRetrieveServlet extends HttpServlet {
 			    request.setAttribute("dto", dto);
 
 
-		RequestDispatcher dis = request.getRequestDispatcher("Page5.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("sawonlist/sawonedit.jsp");
 		dis.forward(request, response);
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
