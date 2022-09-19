@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 *{
 list-style: none;
 text-decoration: none;
@@ -8,9 +7,8 @@ margin: 0px;
 padding: 0px;
 color : #000;
 }
-
 .signup{
-width: 140px;
+width: 180px;
 height: 40px;
 border: 3px solid black;
 border-radius: 1em;
@@ -18,20 +16,80 @@ display : flex;
 background-color: black;
 color: white;
 font-size: 25px;
-margin-top : 95px;
-margin-left : 850px;
+margin-top : 17px;
+margin-left : 795px;
 justify-content: center;
 align-items: center;
 }
 
-.back{
-	margin-left: 10px;
-	margin-top: 570px;
+.pagesign{
+	display: flex;
+	height: 100px;
 }
 
-.backimage{
-    width: 90px;
-	height: 90px;
+.ssign{
+	margin-right: 500px;
+	width: 100px;
+	margin-top: 10px;
+}
+
+.paging{
+	margin-top: 10px;
+	align-items: center;
+}
+
+.modify{
+	margin-left: 10px;
+}
+.ttp{
+	display: flex;
+	width: 1000px;
+}
+.detail{
+	display: flex;
+	margin-left: 500px;
+	margin-top: 10px;
+	width: 1200px;
+}
+.modify_title
+{
+width: 1200px;
+align-items: center;
+text-align : center;
+display:flex;
+font-size: 30px;
+font-weight: bold;
+height:50px;
+margin-left: 30px;
+}
+
+.category{
+width: 300px;
+height: 55px;
+border: 3px solid black;
+color: black;
+font-size: 25px;
+justify-content: center;
+align-items: center;
+}
+
+.option{
+width: 200px;
+height: 35px;
+border: 3px solid black;
+color: black;
+font-size: 25px;
+justify-content: center;
+align-items: center;
+}
+.opt{
+width: 200px;
+height: 35px;
+border: 3px solid black;
+color: black;
+font-size: 25px;
+justify-content: center;
+align-items: center;
 }
 
 .toptop{
@@ -45,7 +103,6 @@ border: 3px solid black;
 margin: auto;
 border-radius: 2em;
 position:relative;
-background-color: red;
 }
 .logo{
 display : flex;
@@ -56,6 +113,7 @@ width: 950px;
 height : 170px;
 justify-content: flex-end;
 margin-right: 50px;
+margin-bottom: 100px;
 }
 
 .jemog{
@@ -92,20 +150,7 @@ margin-left : 250px;
 border: 3px solid black;
 border-radius: 1em;
 }
-.modify{
-	margin-left: 10px;
-	
-}
 
-.modify_title
-{
-align-items: center;
-display: flex;
-font-size: 30px;
-font-weight: bold;
-height:100px;
-margin-left: 30px;
-}
 
 .title_menus{
 	display: flex;
@@ -129,7 +174,6 @@ margin-left: 30px;
 
 .admin_boardList{
   border-bottom: 1px solid #ccc;
-  background-color: purple;
 }
 
 
@@ -146,18 +190,15 @@ margin-left: 30px;
   padding: 10px 0;
 }
 
-.paging{
-	align-items: center;
-	margin: auto;
-}
-
 .back{
  position:absolute;
  bottom:0;
  margin-bottom: 20px;
  margin-left: 10px;
 }
+
 .backimage{
     width: 90px;
 	height: 90px;
 }
+

@@ -16,42 +16,72 @@ display : flex;
 background-color: black;
 color: white;
 font-size: 25px;
-margin-top : 95px;
-margin-left : 850px;
+margin-top : 17px;
+margin-left : 790px;
 justify-content: center;
 align-items: center;
 }
 
+.pagesign{
+	display: flex;
+	height: 100px;
+	margin-right: 200px;
+}
+
+.ssign{
+	margin-right: 650px;
+	width: 100px;
+	margin-top: 10px;
+}
+
+.modify{
+	margin-left: 10px;
+}
+.ttp{
+	display: flex;
+}
+.detail{
+	display: flex;
+	margin-left: 500px;
+	margin-top: 10px;
+	width: 1200px;
+}
+.modify_title
+{
+width: 1200px;
+align-items: center;
+text-align : center;
+display:flex;
+font-size: 30px;
+font-weight: bold;
+height:50px;
+margin-left: 30px;
+}
+
 .category{
-width: 140px;
-height: 35px;
+width: 300px;
+height: 55px;
 border: 3px solid black;
-border-radius: 1em;
-background-color: black;
-color: white;
+color: black;
 font-size: 25px;
 justify-content: center;
 align-items: center;
 }
 
 .option{
-width: 140px;
+width: 200px;
 height: 35px;
 border: 3px solid black;
-border-radius: 1em;
-background-color: black;
-color: white;
+color: black;
 font-size: 25px;
 justify-content: center;
 align-items: center;
 }
 .opt{
-width: 140px;
+width: 200px;
 height: 35px;
 border: 3px solid black;
-border-radius: 1em;
-background-color: black;
-color: white;
+color: black;
 font-size: 25px;
 justify-content: center;
 align-items: center;
@@ -114,26 +144,6 @@ width: 500px;
 margin-left : 250px;
 border: 3px solid black;
 border-radius: 1em;
-}
-.modify{
-	margin-left: 10px;
-	
-}
-.ttp{
-	display: flex;
-}
-.detail{
-	display: flex;
-	margin-left: 500px;
-	margin-top: 10px;
-}
-.modify_title
-{
-align-items: center;
-font-size: 30px;
-font-weight: bold;
-height:50px;
-margin-left: 30px;
 }
 
 .title_menus{
