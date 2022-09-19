@@ -24,13 +24,14 @@
    	   
    	});
 </script>
-<link href="css/ProductList.css?ver=1.1" rel="stylesheet" type="text/css">
+<link href="css/categorylist.css?ver=1.1" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<div class="intro">
 		<div class="header">
 
 			<div class="main1">
+			<div class="toptop">
 				<ul>
 					<li><a href="main.jsp"><img src="images/menu_home.png"
 							style="width: 50px; height: auto"></a></li>
@@ -38,18 +39,18 @@
 				<ul class="logo">
 					<li><a href="main.jsp">DMN COFFEE</a></li>
 				</ul>
-
+				</div>
 				<div class="ttp">
 				
-				<ul class="modify_title">
-					<li>카테고리 리스트</li>
-			    </ul>
+				<div class="modify_title">
+					<a>카테고리 리스트</a>
+			    </div>
 			    
-					   	<ul class="detail">
-					<li><a href="ProductListServlet?" class="category">상품</a>&nbsp;</li>
-					<li><a href="CategoryListServlet?" class="option">카테고리</a></li>
-					<li><a href="OptListServlet?" class="opt">옵션</a></li>
-				</ul>
+					   	<div class="detail">
+					<div><a href="ProductListServlet?" class="category">상품</a>&nbsp;</div>
+					<div><a href="CategoryListServlet?" class="option">카테고리</a>&nbsp;</div>
+					<div><a href="OptListServlet?" class="opt">옵션</a></div>
+				</div>
 			    
 				</div>
 				
@@ -93,8 +94,8 @@ String searchValue = (String)request.getAttribute("searchValue");
 			</td>
 		</tr>
 				</table>
-		
-				<s_paging> 
+			<div class="pagesign">
+			
             <div id="paging" class="paging">
               <br>
                  <%
@@ -112,17 +113,16 @@ String searchValue = (String)request.getAttribute("searchValue");
 		        }//end for
               %>
               
-             <!--    <a href="#" class="prev" title="이전페이지">◀ PREV </a>
-                <s_paging_rep><a href="#" class="num">1</a></s_paging_rep>
-                <s_paging_rep><a href="#" class="num">2</a></s_paging_rep>
-                <s_paging_rep><a href="#" class="num">3</a></s_paging_rep>
-                <a href="#" class="prev" title="다음페이지">NEXT ▶</a> -->
               <br/>&nbsp;
-            </div>
-        </s_paging>
+            </div><!-- end paging -->
+            
+            <div class="ssign">
+				<a href="categoryAdd.jsp" class="signup">카테고리등록</a>
+			</div>
+		</div><!-- end pagesign -->
 			</div><!-- end main1 -->
 		</div><!-- end header -->
-		<a href="categoryAdd.jsp" class="signup">카테고리등록</a>
+		
 		
 		
 		<div class="back">

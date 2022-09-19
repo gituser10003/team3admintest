@@ -82,8 +82,8 @@ String searchValue = (String)request.getAttribute("searchValue");
 			</td>
 		</tr>
 				</table>
+		<div class="pagesign">
 		
-				<s_paging> 
             <div id="paging" class="paging">
               <br>
               <%
@@ -100,18 +100,19 @@ String searchValue = (String)request.getAttribute("searchValue");
 		          	}
 		        }//end for
               %>
- <!--                <a href="#" class="prev" title="이전페이지">◀ PREV </a>
-                <s_paging_rep><a href="#" class="num">1</a></s_paging_rep>
-                <s_paging_rep><a href="#" class="num">2</a></s_paging_rep>
-                <s_paging_rep><a href="#" class="num">3</a></s_paging_rep>
-                <a href="#" class="prev" title="다음페이지">NEXT ▶</a> -->
+
               <br/>&nbsp;
-            </div>
-        </s_paging>
+            </div><!-- end paging -->
+        
+        <div class="ssign">
+			<a href="memberAdd.jsp" class="signup">회원등록</a>
+		</div>
+		
+        </div><!-- end pagesign -->
 			</div><!-- end main1 -->
 		</div><!-- end header -->
-		<a href="memberAdd.jsp" class="signup">회원등록</a>
 		
+	
 		
 		<div class="back">
 		<ul>

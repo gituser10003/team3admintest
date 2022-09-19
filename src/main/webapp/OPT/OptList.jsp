@@ -12,7 +12,7 @@
 <script type="text/javascript">
 
 </script>
-<link href="css/OptList.css?ver=1.1" rel="stylesheet" type="text/css">
+<link href="css/OptList.css?ver=1.2" rel="stylesheet" type="text/css">
 
 </head>
 <body>
@@ -38,15 +38,15 @@
 				</div>
 				<div class="ttp">
 				
-					<ul class="modify_title">
-					<li>옵션 리스트</li>
-			    </ul>
+					<div class="modify_title">
+					<a>옵션 리스트</a>
+			    </div>
 			    
-			 		   	<ul class="detail">
-					<li><a href="ProductListServlet?" class="category">상품</a>&nbsp;</li>
-					<li><a href="CategoryListServlet?" class="option">카테고리</a></li>
-					<li><a href="OptListServlet?" class="opt">옵션</a></li>
-				</ul>
+			    <div class="detail">
+					<div><a href="ProductListServlet?" class="category">상품</a>&nbsp;</div>
+					<div><a href="CategoryListServlet?" class="option">카테고리</a>&nbsp;</div>
+					<div><a href="OptListServlet?" class="opt">옵션</a></div>
+				</div>
 			    
 				</div>
 
@@ -92,8 +92,8 @@
 			</td>
 		</tr>
 				</table>
-		
-				<s_paging> 
+		<div class="pagesign">
+				
             <div id="paging" class="paging">
               <br>
                 <%
@@ -111,11 +111,17 @@
 		        }//end for
 		   %>
               <br/>&nbsp;
-            </div>
-        </s_paging>
+            </div><!-- end paging -->
+            
+            <div class="ssign">
+				<a href="OptAdd.jsp" class="signup">옵션생성</a>
+			</div>
+            
+        </div><!-- end pagesign -->
 			</div><!-- end main1 -->
 		</div><!-- end header -->
-		<a href="OptAdd.jsp" class="signup">옵션생성</a>
+		
+		
 		
 		<div class="back">
 		<ul>
