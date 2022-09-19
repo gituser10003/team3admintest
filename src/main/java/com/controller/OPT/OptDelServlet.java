@@ -39,7 +39,7 @@ public class OptDelServlet extends HttpServlet {
 			String optno = request.getParameter("optno");
 			OptService service = new OptService();
 			int n = service.OptDel(optno);
-			
+			System.out.println("상품 삭제 완료"+n);
 			nextPage = "OptListServlet";
 		}else {
 			nextPage = "Page2.jsp";

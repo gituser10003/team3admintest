@@ -40,7 +40,7 @@ public class ProductDelServlet extends HttpServlet {
 			
 			ProductService service = new ProductService();
 			int n = service.ProductDel(pdno);
-			
+			System.out.println("상품 삭제 완료"+n);
 			nextPage = "ProductListServlet";
 		}else {
 			nextPage = "Page2.jsp";

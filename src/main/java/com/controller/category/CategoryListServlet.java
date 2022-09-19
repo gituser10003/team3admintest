@@ -25,7 +25,7 @@ public class CategoryListServlet extends HttpServlet {
 
 		String searchName = request.getParameter("searchName");
 		String searchValue = request.getParameter("searchValue");
-		System.out.println(searchName+"\t"+searchValue);
+		System.out.println("카테고리 리스트 불러옴"+searchName+"\t"+searchValue);
 		CategoryService service = new CategoryService();
 		CategoryPageDTO cDTO = service.select(searchName, searchValue, Integer.parseInt(curPage));
 		request.setAttribute("cDTO", cDTO);

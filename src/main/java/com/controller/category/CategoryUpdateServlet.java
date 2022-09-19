@@ -33,6 +33,7 @@ public class CategoryUpdateServlet extends HttpServlet {
 			CategoryService service = new CategoryService();
 			int num = service.categoryUpdate(map);
 			nextPage = "CategoryListServlet";
+			System.out.println("카테고리 업데이트 개수"+num);
 		}else {
 			nextPage="LoginUIServlet";
 			request.setAttribute("mesg", "로그인이 필요한 작업입니다.");

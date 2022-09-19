@@ -31,7 +31,7 @@ public class ProductListServlet extends HttpServlet {
 		
 		String searchName = request.getParameter("searchName");
 		String searchValue = request.getParameter("searchValue");
-		System.out.println(searchName+"\t"+searchValue);
+		System.out.println("상품 이미지 로딩 완료"+searchName+"\t"+searchValue);
 		ProductService service = new ProductService();
 		ProductPageDTO pDTO = service.select(searchName, searchValue, Integer.parseInt(curPage));
 		

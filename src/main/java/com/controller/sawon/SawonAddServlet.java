@@ -37,7 +37,7 @@ public class SawonAddServlet extends HttpServlet {
 	
 	SawonService service = new SawonService();
 	int n = service.sawonAdd(dto);
-	
+	System.out.println("사원 등록 완료"+n);
 	HttpSession session = request.getSession();
 	session.setAttribute("sawonAdd", "회원가입성공");
 	session.setMaxInactiveInterval(5);

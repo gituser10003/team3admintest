@@ -125,7 +125,7 @@ System.out.println("sizeInBytes====" + sizeInBytes);
 					int num = service.ProductUpdate(map);
 					nextPage = "ProductListServlet";
 					System.out.println(map);
-					System.out.println(num);
+					System.out.println("상품업데이트 완료"+num);
 					
 				}else {
 					nextPage = "LoginUIServlet";

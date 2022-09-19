@@ -40,6 +40,7 @@ public class MemberUpdateServlet extends HttpServlet {
 			
 			MemberService service = new MemberService();
 			int num = service.memberUpdate(map);
+			System.out.println("멤버 업데이트 완료"+num);
 			nextPage = "MemberListServlet";
 		}else {
 			nextPage="LoginUIServlet";

@@ -35,12 +35,10 @@ public class SawonDelServlet extends HttpServlet {
 		 String nextPage = null;
 	      if(dto!=null) {
 	       String userid = request.getParameter("userid");
-	       
 	       SawonService service = new SawonService();
 	       int n = service.SawonDel(userid);
-	       
+	       System.out.println("사원 삭제 완료"+n);
 			nextPage = "SawonListServlet";
-
 	      }else {
 			  nextPage = "Page2.jsp";
 			  session.setAttribute("mesg", "로그인이 필요한 작업입니다.");

@@ -42,6 +42,7 @@ public class SawonUpdateServlet extends HttpServlet {
 			
 			SawonService service = new SawonService();
 			int num = service.sawonUpdate(dto2);
+			System.out.println("사원 업데이트 완료"+num);
 			if (num==1) {
 				dto2= service.SawonRetrieve(userid);
 				session.setAttribute("login", dto2); //세션에 최신정보저장

@@ -50,7 +50,7 @@ public class OptAddServlet extends HttpServlet {
 	
 		OptService service=new OptService();
 		int n=service.OptAdd(dto);
-		
+		System.out.println("상품 옵션 생성 완료"+n);
 		nextPage = "OptListServlet";
 		session.setAttribute("OptAdd", "상품기입성공");
 		session.setMaxInactiveInterval(5);

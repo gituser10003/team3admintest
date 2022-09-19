@@ -36,7 +36,7 @@ public class MemberAddServlet extends HttpServlet {
 			
 			MemberService service = new MemberService();
 			int n = service.memberAdd(dto);
-			
+			System.out.println("멤버 생성 완료"+n);
 			nextPage = "MemberListServlet";
 			session.setAttribute("memberAdd", "회원등록성공");
 			session.setMaxInactiveInterval(5);

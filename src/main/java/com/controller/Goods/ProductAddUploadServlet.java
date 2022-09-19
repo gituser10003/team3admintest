@@ -116,6 +116,7 @@ public class ProductAddUploadServlet extends HttpServlet {
 						session.setAttribute("ProductAdd", "상품기입성공");
 						session.setMaxInactiveInterval(5);
 						  response.sendRedirect(nextPage);
+						  System.out.println("상품 이미지 업로드 생성 완료"+n);
 					}catch(FileUploadException e) {
 						e.printStackTrace();
 					}

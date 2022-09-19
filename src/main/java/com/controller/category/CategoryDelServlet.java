@@ -25,7 +25,7 @@ public class CategoryDelServlet extends HttpServlet {
 			
 			CategoryService service = new CategoryService();
 			int n = service.categoryDel(ctno);
-			
+			System.out.println("카테고리 삭제 완료"+n);
 			nextPage = "CategoryListServlet";
 		}else {
 			nextPage = "Page2.jsp";

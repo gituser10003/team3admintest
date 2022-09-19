@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.ibatis.reflection.SystemMetaObject;
+
 import com.service.SawonService;
 
 @WebServlet("/SawonIdCheckServlet")
@@ -24,7 +26,7 @@ public class SawonIdCheckServlet extends HttpServlet {
 		if (count==1) {
 			mesg="아이디 중복";
 		}//end if
-		
+		System.out.println("사원 아이디 체크");
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		out.print(mesg);

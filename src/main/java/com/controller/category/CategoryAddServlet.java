@@ -34,6 +34,7 @@ public class CategoryAddServlet extends HttpServlet {
 			nextPage = "CategoryListServlet";
 			session.setAttribute("categoryAdd", "회원등록성공");
 			session.setMaxInactiveInterval(5);
+			System.out.println("카테고리 생성"+n);
 		}else {
 			nextPage = "LoginUIServlet";
 			session.setAttribute("mesg", "로그인이 필요한 작업입니다.");

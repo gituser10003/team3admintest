@@ -27,7 +27,7 @@ public class MemberDelServlet extends HttpServlet {
 			
 			MemberService service = new MemberService();
 			int n = service.memberDel(memno);
-			
+			System.out.println("멤버 삭제 완료"+n);
 			nextPage = "MemberListServlet";
 		}else {
 			nextPage = "Page2.jsp";

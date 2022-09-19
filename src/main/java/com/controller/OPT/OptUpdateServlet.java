@@ -51,6 +51,7 @@ public class OptUpdateServlet extends HttpServlet {
 			
 			OptService service = new OptService();
 			int num = service.OptUpdate(map);
+			System.out.println("옵션 업데이트 완료"+num);
 			nextPage = "OptListServlet";
 		}else {
 			nextPage="LoginUIServlet";
