@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body class="container">
 <%
    String mesg = (String)session.getAttribute("sawonAdd");
    if(mesg!=null){
