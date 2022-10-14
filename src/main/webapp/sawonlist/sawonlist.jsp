@@ -115,11 +115,6 @@
 		          	}
 		        }//end for
 		   %>
-          <!--       <a href="#" class="prev" title="이전페이지">◀ PREV </a>
-                <s_paging_rep><a href="#" class="num">1</a></s_paging_rep>
-                <s_paging_rep><a href="#" class="num">2</a></s_paging_rep>
-                <s_paging_rep><a href="#" class="num">3</a></s_paging_rep>
-                <a href="#" class="prev" title="다음페이지">NEXT ▶</a> -->
               <br/>&nbsp;
             </div>
         </s_paging>

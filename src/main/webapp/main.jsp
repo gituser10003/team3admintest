@@ -11,8 +11,13 @@
    String mesg = (String)session.getAttribute("sawonAdd");
    if(mesg!=null){
 %>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
    <script type="text/javascript">
-     alert('<%=mesg%>');
+     Swal.fire({
+         icon: 'success',
+         title: '<%=mesg%>',
+         confirmButtonColor: '#6495ED'
+       })
    </script>
    <%
 session.removeAttribute("sawonAdd");
