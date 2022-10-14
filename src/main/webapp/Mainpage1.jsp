@@ -3,6 +3,7 @@
 <link href="css/Mainpage1.css?ver=1" rel="stylesheet" type="text/css">
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script type="text/javascript">
 $(document).ready(function () {
 	
@@ -10,11 +11,19 @@ $(document).ready(function () {
 		 var userid = $("#userid").val();
 		 var passwd = $("#passwd").val();
 	    		if(userid.length==0){
-	    			alert("userid 필수")
+	    		    Swal.fire({
+	    		         icon: 'error',
+	    		         title: 'ID 필수',
+	    		         confirmButtonColor: '#6495ED'
+	    		       })
 	    			$("#userid").focus();
 	    			event.preventDefault();
 	    		}else if(passwd.length==0){
-	    			alert("passwd 필수")
+	    		    Swal.fire({
+	    		         icon: 'error',
+	    		         title: 'PW 필수',
+	    		         confirmButtonColor: '#6495ED'
+	    		       })
 	    			$("#passwd").focus();
 	    			event.preventDefault();
 	    		}
